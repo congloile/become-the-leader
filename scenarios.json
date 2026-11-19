@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "Energy Crisis",
+    "choices": [
+      {"id": "A", "text": "Subsidize Electricity Bills", "effects": {"ECO": -6, "HAP": 9, "ENV": 0, "SEC": 0}},
+      {"id": "B", "text": "Invest in Nuclear Energy", "effects": {"ECO": -3, "HAP": 2, "ENV": 8, "SEC": 6}},
+      {"id": "C", "text": "Resume Russian Energy Imports", "effects": {"ECO": 12, "HAP": 7, "ENV": -3, "SEC": -8}}
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Education Crisis",
+    "choices": [
+      {"id": "A", "text": "Increase Public Education Funding", "effects": {"ECO": -3, "HAP": 8, "ENV": 0, "SEC": 0}},
+      {"id": "B", "text": "Performance Based School Funding", "effects": {"ECO": 3, "HAP": -5, "ENV": 0, "SEC": 0}}
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Forests at a Crossroads",
+    "choices": [
+      {"id": "A", "text": "Expand Logging", "effects": {"ECO": 9, "HAP": 3, "ENV": -12, "SEC": -3}},
+      {"id": "B", "text": "Protect Forests", "effects": {"ECO": -6, "HAP": 2, "ENV": 12, "SEC": 3}}
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Healthcare Under Pressure",
+    "choices": [
+      {"id": "A", "text": "Redirect Government Funding", "effects": {"ECO": -6, "HAP": 8, "ENV": 0, "SEC": 0}},
+      {"id": "B", "text": "Raise Taxes", "effects": {"ECO": 3, "HAP": -3, "ENV": 0, "SEC": 0}}
+    ]
+  },
+  {
+    "id": 5,
+    "title": "The Future of Transport",
+    "choices": [
+      {"id": "A", "text": "Expand Public Transport", "effects": {"ECO": -5, "HAP": 6, "ENV": 9, "SEC": 0}},
+      {"id": "B", "text": "Support EVs and Rural Charging", "effects": {"ECO": -3, "HAP": 3, "ENV": 7, "SEC": 0}}
+    ]
+  },
+  {
+    "id": 6,
+    "title": "The Russian Relations Dilemma",
+    "choices": [
+      {"id": "A", "text": "Maintain Strategic Distance", "effects": {"ECO": -5, "HAP": -2, "ENV": 0, "SEC": 10}},
+      {"id": "B", "text": "Restore Pre War Economic Relations", "effects": {"ECO": 12, "HAP": 6, "ENV": -2, "SEC": -12}}
+    ]
+  },
+  {
+    "id": 7,
+    "title": "The Unemployment Crisis",
+    "choices": [
+      {"id": "A", "text": "Cut Corporate Taxes and Reduce Benefits", "effects": {"ECO": 5, "HAP": -3, "ENV": 0, "SEC": 0}},
+      {"id": "B", "text": "Support Household Purchasing Power", "effects": {"ECO": -3, "HAP": 6, "ENV": 0, "SEC": 0}}
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Guns or Welfare",
+    "choices": [
+      {"id": "A", "text": "Increase Defence Spending", "effects": {"ECO": -7, "HAP": -6, "ENV": 0, "SEC": 12}},
+      {"id": "B", "text": "Prioritize Welfare Spending", "effects": {"ECO": -3, "HAP": 9, "ENV": 0, "SEC": -7}}
+    ]
+  },
+  {
+    "id": 9,
+    "title": "The Public Debt Dilemma",
+    "choices": [
+      {"id": "A", "text": "Implement Major Spending Cuts", "effects": {"ECO": 3, "HAP": -8, "ENV": 0, "SEC": 0}},
+      {"id": "B", "text": "Raise Consumption Taxes", "effects": {"ECO": -2, "HAP": -4, "ENV": 0, "SEC": 0}}
+    ]
+  },
+  {
+    "id": 10,
+    "title": "The Green Industrial Transition",
+    "choices": [
+      {"id": "A", "text": "Strengthen Strategic Industries", "effects": {"ECO": 9, "HAP": 5, "ENV": -8, "SEC": 4}},
+      {"id": "B", "text": "Enforce Environmental Standards", "effects": {"ECO": -5, "HAP": 3, "ENV": 9, "SEC": 0}}
+    ]
+  }
+]
