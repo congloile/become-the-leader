@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Decision - Become the Leader</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='decision.css') }}"
+    />
+
+    <script
+      src="{{ url_for('static', filename='decision.js') }}"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <main class="decision-container">
+      <header class="decision-header">
+        <h1>BECOME THE LEADER</h1>
+
+        <div class="decision-meta">
+          <strong id="round-display">Loading...</strong>
+          <span id="difficulty-display"></span>
+          <span id="phase-display"></span>
+        </div>
+      </header>
+
+      <section class="indicator-panel">
+        <h2>National Indicators</h2>
+        <div id="mini-indicators"></div>
+      </section>
+
+      <section class="scenario-panel">
+        <p class="section-label">CURRENT CHALLENGE</p>
+
+        <h2 id="scenario-title">Loading scenario...</h2>
+
+        <p id="scenario-description"></p>
+
+        <h3>Choose a policy</h3>
+
+        <div id="choices-container"></div>
+
+        <p class="decision-note">
+          Policy effects will be revealed after your decision.
+        </p>
+      </section>
+
+      <p id="decision-message" role="status" aria-live="polite"></p>
+
+      <div class="decision-actions">
+        <button type="button" id="menu-button">Main Menu</button>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+.consequence-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 24px 70px;
+}
+
+.consequence-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.consequence-header h1 {
+    font-size: clamp(26px, 4vw, 38px);
+}
+
+.consequence-header p {
+    color: #d3dce6;
+}
+
+.consequence-panel {
+    background: #223449;
+    border: 1px solid #42566e;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+.consequence-panel h2 {
+    color: #f5d38b;
+}
+
+.section-label {
+    color: #e9bd63;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+#decision-explanation,
+#difficulty-note,
+.rounding-note {
+    color: #d3dce6;
+    line-height: 1.7;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    min-width: 580px;
+}
+
+.impact-table th,
+.impact-table td {
+    padding: 16px 10px;
+    border-bottom: 1px solid #42566e;
+    text-align: center;
+}
+
+.impact-table th:first-child,
+.impact-table td:first-child {
+    text-align: left;
+}
+
+.impact-table th {
+    color: #f5d38b;
+}
+
+.positive {
+    color: #7edba1;
+    font-weight: bold;
+}
+
+.negative {
+    color: #ff9999;
+    font-weight: bold;
+}
+
+.rounding-note {
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.warning-panel {
+    background: #403327;
+    border: 1px solid #e9a35a;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+.warning-panel[hidden] {
+    display: none;
+}
+
+.warning-panel h2 {
+    color: #ffcb89;
+}
+
+#game-message {
+    text-align: center;
+    color: #f5d38b;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 25px 0;
+}
+
+.consequence-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.consequence-actions button {
+    padding: 16px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#menu-button {
+    background: #42566e;
+    color: white;
+}
+
+#next-button {
+    background: #e9bd63;
+    color: #142032;
+}
+
+#next-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+    .consequence-container {
+        padding: 25px 18px;
+    }
+
+    .consequence-panel {
+        padding: 20px;
+    }
+
+    .consequence-actions button {
+        flex: 1;
+        padding: 15px;
+    }
+}

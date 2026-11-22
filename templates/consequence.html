@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Consequence - Become the Leader</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='consequence.css') }}"
+    />
+
+    <script
+      src="{{ url_for('static', filename='consequence.js') }}"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <main class="consequence-container">
+      <header class="consequence-header">
+        <h1>BECOME THE LEADER</h1>
+
+        <p id="round-display">Loading...</p>
+      </header>
+
+      <section class="consequence-panel">
+        <p class="section-label">YOUR DECISION</p>
+
+        <h2 id="decision-title">Loading policy...</h2>
+
+        <p id="decision-explanation">
+          Here is how your decision affected the national indicators.
+        </p>
+      </section>
+
+      <section class="consequence-panel">
+        <h2>What Changed?</h2>
+
+        <p id="difficulty-note"></p>
+
+        <div class="table-wrapper">
+          <table class="impact-table">
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Before</th>
+                <th>Base</th>
+                <th>Actual Change</th>
+                <th>After</th>
+              </tr>
+            </thead>
+
+            <tbody id="impact-body"></tbody>
+          </table>
+        </div>
+
+        <p class="rounding-note">
+          Negative effects are adjusted by difficulty and rounded to whole
+          numbers. Indicators remain between 0 and 100.
+        </p>
+      </section>
+
+      <section id="warning-panel" class="warning-panel" hidden>
+        <h2>National Warning</h2>
+        <p id="warning-message"></p>
+      </section>
+
+      <p id="game-message" role="status" aria-live="polite"></p>
+
+      <div class="consequence-actions">
+        <button type="button" id="menu-button">Main Menu</button>
+
+        <button type="button" id="next-button" disabled>Next Round</button>
+      </div>
+    </main>
+  </body>
+</html>

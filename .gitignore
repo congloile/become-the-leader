@@ -221,3 +221,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local SQLite game data
+game.db
+game.db-journal
+game.db-wal
+game.db-shm

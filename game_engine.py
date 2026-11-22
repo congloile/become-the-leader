@@ -167,119 +167,121 @@ def play_choice(game, choice_id, scenarios):
 
     return game
 
-# First test
-game = new_game("medium")
+if __name__ == "__main__":
 
-print("Initial state:", game)
+    # First test
+    game = new_game("medium")
 
-update_indicators(game, {
-    "ECO": 10,
-    "ENV": -5,
-    "HAP": 5,
-    "SEC": 0
-})
+    print("Initial state:", game)
 
-print("After decision:", game)
+    update_indicators(game, {
+        "ECO": 10,
+        "ENV": -5,
+        "HAP": 5,
+        "SEC": 0
+    })
 
-finish_round(game)
+    print("After decision:", game)
 
-print("After finishing round:", game)
+    finish_round(game)
 
-# TEST 1: GAME OVER
-game_over = new_game("medium")
+    print("After finishing round:", game)
 
-update_indicators(game_over, {"ECO": -60})
-finish_round(game_over)
+    # TEST 1: GAME OVER
+    game_over = new_game("medium")
 
-print("Game Over test:", game_over["status"])
+    update_indicators(game_over, {"ECO": -60})
+    finish_round(game_over)
 
-
-# TEST 2: VICTORY
-victory_game = new_game("medium")
-
-victory_game["round"] = 10
-
-victory_game["indicators"] = {
-    "ECO": 70,
-    "HAP": 80,
-    "ENV": 75,
-    "SEC": 60
-}
-
-finish_round(victory_game)
-
-print("Victory test:", victory_game["status"])
-
-assert victory_game["status"] == "victory"
-
-# TEST 3: DEFEAT
-defeat_game = new_game("medium")
-
-defeat_game["round"] = 10
-
-defeat_game["indicators"] = {
-    "ECO": 70,
-    "ENV": 74,
-    "HAP": 80,
-    "SEC": 50
-}
+    print("Game Over test:", game_over["status"])
 
 
-# TEST 4: SECURITY THRESHOLD
+    # TEST 2: VICTORY
+    victory_game = new_game("medium")
 
-security_test = new_game("medium")
+    victory_game["round"] = 10
 
-security_test["indicators"]["SEC"] = 40
+    victory_game["indicators"] = {
+        "ECO": 70,
+        "HAP": 80,
+        "ENV": 75,
+        "SEC": 60
+    }
 
-finish_round(security_test)
+    finish_round(victory_game)
 
-print("Security test:", security_test["status"])
+    print("Victory test:", victory_game["status"])
+
+    assert victory_game["status"] == "victory"
+
+    # TEST 3: DEFEAT
+    defeat_game = new_game("medium")
+
+    defeat_game["round"] = 10
+
+    defeat_game["indicators"] = {
+        "ECO": 70,
+        "ENV": 74,
+        "HAP": 80,
+        "SEC": 50
+    }
 
 
-# TEST 5: JUST ABOVE SECURITY LIMIT
+    # TEST 4: SECURITY THRESHOLD
 
-safe_test = new_game("medium")
+    security_test = new_game("medium")
 
-safe_test["indicators"]["SEC"] = 41
+    security_test["indicators"]["SEC"] = 40
 
-finish_round(safe_test)
+    finish_round(security_test)
 
-print("Safe test:", safe_test["status"])
-print("Safe round:", safe_test["round"])
+    print("Security test:", security_test["status"])
 
 
-finish_round(defeat_game)
+    # TEST 5: JUST ABOVE SECURITY LIMIT
 
-print("Defeat test:", defeat_game["status"])
+    safe_test = new_game("medium")
 
-# TEST 6: APPLY OFFICIAL CHOICE
+    safe_test["indicators"]["SEC"] = 41
 
-test_game = new_game("medium")
+    finish_round(safe_test)
 
-apply_choice(test_game, {
-    "ECO": -3,
-    "HAP": 2,
-    "ENV": 8,
-    "SEC": 6
-})
+    print("Safe test:", safe_test["status"])
+    print("Safe round:", safe_test["round"])
 
-print("Choice test:", test_game)
 
-# TEST 8: PLAY USING JSON DATA
+    finish_round(defeat_game)
 
-scenarios = load_scenarios()
+    print("Defeat test:", defeat_game["status"])
 
-demo_game = new_game("medium")
+    # TEST 6: APPLY OFFICIAL CHOICE
 
-# Round 1: Invest in Nuclear Energy
-play_choice(demo_game, "B", scenarios)
+    test_game = new_game("medium")
 
-print("After Round 1:", demo_game)
+    apply_choice(test_game, {
+        "ECO": -3,
+        "HAP": 2,
+        "ENV": 8,
+        "SEC": 6
+    })
 
-# Round 2: Increase Public Education Funding
-play_choice(demo_game, "A", scenarios)
+    print("Choice test:", test_game)
 
-print("After Round 2:", demo_game)
+    # TEST 8: PLAY USING JSON DATA
+
+    scenarios = load_scenarios()
+
+    demo_game = new_game("medium")
+
+    # Round 1: Invest in Nuclear Energy
+    play_choice(demo_game, "B", scenarios)
+
+    print("After Round 1:", demo_game)
+
+    # Round 2: Increase Public Education Funding
+    play_choice(demo_game, "A", scenarios)
+
+    print("After Round 2:", demo_game)
 
 
 

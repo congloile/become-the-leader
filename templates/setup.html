@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>New Game - Become the Leader</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='setup.css') }}"
+    />
+
+    <script src="{{ url_for('static', filename='setup.js') }}" defer></script>
+  </head>
+
+  <body>
+    <main class="setup-container">
+      <header class="setup-header">
+        <p>BECOME THE LEADER</p>
+        <h1>NEW GAME</h1>
+        <p>Choose your country and difficulty.</p>
+      </header>
+
+      <form id="setup-form">
+        <section class="setup-section">
+          <h2>Your name</h2>
+
+          <label for="player-name"> Player name </label>
+
+          <input
+            type="text"
+            id="player-name"
+            name="player-name"
+            placeholder="Enter your name"
+            maxlength="30"
+            autocomplete="nickname"
+            required
+          />
+        </section>
+
+        <section class="setup-section">
+          <h2>Choose your country</h2>
+
+          <div class="country-grid">
+            <div class="country-card selected">
+              <span class="flag">🇫🇮</span>
+              <h3>Finland</h3>
+              <p>The Welfare State</p>
+              <span class="country-status"> Available </span>
+            </div>
+
+            <div class="country-card unavailable">
+              <span class="flag">🇳🇿</span>
+              <h3>New Zealand</h3>
+              <p>The Green Nation</p>
+              <span class="country-status"> Coming soon </span>
+            </div>
+
+            <div class="country-card unavailable">
+              <span class="flag">🇸🇬</span>
+              <h3>Singapore</h3>
+              <p>Economic Powerhouse</p>
+              <span class="country-status"> Coming soon </span>
+            </div>
+          </div>
+
+          <div class="goals-box">
+            <h3>Finland — Victory Goals</h3>
+
+            <p>Economy (ECO) ≥ 70</p>
+            <p>Happiness (HAP) ≥ 80</p>
+            <p>Environment (ENV) ≥ 75</p>
+
+            <small>
+              Starting indicators: ECO 65 | HAP 70 | ENV 70 | SEC 60
+            </small>
+          </div>
+        </section>
+
+        <section class="setup-section">
+          <h2>Choose difficulty</h2>
+
+          <div class="difficulty-grid">
+            <label class="difficulty-card">
+              <input type="radio" name="difficulty" value="easy" />
+
+              <strong>Easy</strong>
+              <span>ECO/HAP/ENV ≤ 10</span>
+              <span>Security ≤ 20</span>
+              <span>Negatives ×0.60</span>
+            </label>
+
+            <label class="difficulty-card">
+              <input type="radio" name="difficulty" value="medium" />
+
+              <strong>Medium</strong>
+              <span>ECO/HAP/ENV ≤ 20</span>
+              <span>Security ≤ 40</span>
+              <span>Negatives ×0.80</span>
+            </label>
+
+            <label class="difficulty-card">
+              <input type="radio" name="difficulty" value="hard" />
+
+              <strong>Hard</strong>
+              <span>ECO/HAP/ENV ≤ 30</span>
+              <span>Security ≤ 50</span>
+              <span>Negatives ×1.10</span>
+            </label>
+          </div>
+
+          <p class="difficulty-note">
+            Multipliers apply to negative effects only. Positive effects remain
+            unchanged.
+          </p>
+        </section>
+
+        <div class="setup-actions">
+          <button type="button" id="back-button">Back</button>
+
+          <button type="submit" id="start-button" disabled>Start Game</button>
+        </div>
+
+        <p id="setup-message" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+  </body>
+</html>

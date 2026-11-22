@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Game Dashboard - Become the Leader</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dashboard.css') }}"
+    />
+
+    <script
+      src="{{ url_for('static', filename='dashboard.js') }}"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <main class="dashboard-container">
+      <header class="dashboard-header">
+        <h1>BECOME THE LEADER</h1>
+        <p>Finland — The Welfare State</p>
+      </header>
+
+      <div class="dashboard-info">
+        <div>
+          <strong id="round-display">Round - / 10</strong>
+          <p id="phase-display">Loading phase...</p>
+        </div>
+
+        <div class="player-info">
+          <strong id="difficulty-display">Difficulty</strong>
+          <p>Player: <span id="player-display">...</span></p>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="dashboard-panel">
+          <h2>National Indicators</h2>
+
+          <div id="indicators-container"></div>
+
+          <p class="dashboard-note" id="limits-note">
+            Loading Game Over limits...
+          </p>
+        </section>
+
+        <section class="dashboard-panel">
+          <h2>Your Goals After Round 10</h2>
+
+          <div class="goal-item">
+            <span>Economy ≥ 70</span>
+            <strong id="eco-goal">...</strong>
+          </div>
+
+          <div class="goal-item">
+            <span>Happiness ≥ 80</span>
+            <strong id="hap-goal">...</strong>
+          </div>
+
+          <div class="goal-item">
+            <span>Environment ≥ 75</span>
+            <strong id="env-goal">...</strong>
+          </div>
+
+          <p class="dashboard-note">
+            All three goals must be met after Round 10. You must also avoid the
+            Game Over limits.
+          </p>
+        </section>
+      </div>
+
+      <p id="dashboard-message" role="status" aria-live="polite"></p>
+
+      <div class="dashboard-actions">
+        <button type="button" id="menu-button">Quit to Menu</button>
+
+        <button type="button" id="begin-button" disabled>Begin Round</button>
+      </div>
+    </main>
+  </body>
+</html>

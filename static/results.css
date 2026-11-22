@@ -1,0 +1,103 @@
+.results-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 45px 24px 70px;
+}
+
+.results-container header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#result-title {
+    font-size: 36px;
+    color: #f5d38b;
+    margin-top: 30px;
+}
+
+#result-description {
+    color: #d3dce6;
+    line-height: 1.7;
+}
+
+.result-panel {
+    padding: 25px;
+    margin-bottom: 22px;
+    background: #223449;
+    border: 1px solid #42566e;
+    border-radius: 12px;
+}
+
+.result-panel h2 {
+    color: #f5d38b;
+}
+
+.result-panel[hidden] {
+    display: none;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #42566e;
+}
+
+.goal-met {
+    color: #7edba1;
+}
+
+.goal-missed {
+    color: #ff9999;
+}
+
+#result-reason {
+    color: #f5d38b;
+    line-height: 1.7;
+}
+
+#final-score {
+    font-size: 40px;
+    font-weight: bold;
+    color: #f5d38b;
+    text-align: center;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.result-actions button {
+    padding: 16px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#retry-button {
+    background: #e9bd63;
+    color: #142032;
+}
+
+#menu-button {
+    background: #42566e;
+    color: white;
+}
+
+#result-error {
+    color: #ff9999;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .result-actions button {
+        flex: 1;
+        padding: 15px;
+    }
+}

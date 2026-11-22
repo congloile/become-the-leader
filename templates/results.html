@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Game Results - Become the Leader</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='results.css') }}"
+    />
+
+    <script src="{{ url_for('static', filename='results.js') }}" defer></script>
+  </head>
+
+  <body>
+    <main class="results-container">
+      <header>
+        <h1>BECOME THE LEADER</h1>
+        <h2 id="result-title">Loading results...</h2>
+        <p id="result-description"></p>
+      </header>
+
+      <section class="result-panel">
+        <h2>Final National Indicators</h2>
+        <div id="final-indicators"></div>
+      </section>
+
+      <section class="result-panel">
+        <h2>Finland Victory Goals</h2>
+        <div id="final-goals"></div>
+
+        <p id="result-reason"></p>
+      </section>
+
+      <section class="result-panel" id="score-panel" hidden>
+        <h2>Final Score</h2>
+        <p id="final-score"></p>
+      </section>
+
+      <p id="result-error" role="alert"></p>
+
+      <div class="result-actions">
+        <button id="retry-button" type="button">Try Again</button>
+
+        <button id="menu-button" type="button">Main Menu</button>
+      </div>
+    </main>
+  </body>
+</html>

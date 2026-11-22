@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Become the Leader</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <script src="{{ url_for('static', filename='menu.js') }}"></script>
+
+  <body>
+    <main class="menu-container">
+      <div class="game-logo" aria-hidden="true">★</div>
+
+      <h1>BECOME THE LEADER</h1>
+
+      <p class="subtitle">
+        Three countries. 10 rounds. Decisions with consequences.
+      </p>
+
+      <p class="availability">Finland is currently playable.</p>
+
+      <nav class="menu-buttons" aria-label="Main menu">
+        <button type="button" id="new-game">New Game</button>
+
+        <button type="button" id="how-to-play">How to Play</button>
+
+        <button type="button" id="high-scores">High Scores</button>
+
+        <button type="button" id="about">About</button>
+      </nav>
+
+      <footer>12+ | Supports the UN Sustainable Development Goals</footer>
+    </main>
+  </body>
+</html>
