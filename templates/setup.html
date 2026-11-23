@@ -17,12 +17,17 @@
     />
 
     <script src="{{ url_for('static', filename='setup.js') }}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <main class="setup-container">
       <header class="setup-header">
-        <p>BECOME THE LEADER</p>
         <h1>NEW GAME</h1>
         <p>Choose your country and difficulty.</p>
       </header>
@@ -31,7 +36,7 @@
         <section class="setup-section">
           <h2>Your name</h2>
 
-          <label for="player-name"> Player name </label>
+          <label for="player-name" class="visually-hidden"> Player name </label>
 
           <input
             type="text"
@@ -71,7 +76,7 @@
           </div>
 
           <div class="goals-box">
-            <h3>Finland — Victory Goals</h3>
+            <h3>Finland - Victory Goals</h3>
 
             <p>Economy (ECO) ≥ 70</p>
             <p>Happiness (HAP) ≥ 80</p>
@@ -83,41 +88,47 @@
           </div>
         </section>
 
-        <section class="setup-section">
+        <section class="setup-section difficulty-section">
           <h2>Choose difficulty</h2>
 
           <div class="difficulty-grid">
             <label class="difficulty-card">
               <input type="radio" name="difficulty" value="easy" />
-
               <strong>Easy</strong>
-              <span>ECO/HAP/ENV ≤ 10</span>
-              <span>Security ≤ 20</span>
-              <span>Negatives ×0.60</span>
+              <span class="difficulty-multiplier">Negative effects ×0.60</span>
+              <span class="visually-hidden">Game Over: Economy, Happiness or Environment at 10 or below; Security at 20 or below.</span>
             </label>
 
             <label class="difficulty-card">
               <input type="radio" name="difficulty" value="medium" />
-
               <strong>Medium</strong>
-              <span>ECO/HAP/ENV ≤ 20</span>
-              <span>Security ≤ 40</span>
-              <span>Negatives ×0.80</span>
+              <span class="difficulty-multiplier">Negative effects ×0.80</span>
+              <span class="visually-hidden">Game Over: Economy, Happiness or Environment at 20 or below; Security at 40 or below.</span>
             </label>
 
             <label class="difficulty-card">
               <input type="radio" name="difficulty" value="hard" />
-
               <strong>Hard</strong>
-              <span>ECO/HAP/ENV ≤ 30</span>
-              <span>Security ≤ 50</span>
-              <span>Negatives ×1.10</span>
+              <span class="difficulty-multiplier">Negative effects ×1.10</span>
+              <span class="visually-hidden">Game Over: Economy, Happiness or Environment at 30 or below; Security at 50 or below.</span>
             </label>
           </div>
 
+          <div class="difficulty-rules-box" aria-label="Difficulty rules">
+            <p class="difficulty-hint">Select a difficulty to see its Game Over limits.</p>
+            <p class="difficulty-detail" data-difficulty="easy">
+              <strong>Easy:</strong> Game Over at ECO / HAP / ENV ≤ 10 or SEC ≤ 20.
+            </p>
+            <p class="difficulty-detail" data-difficulty="medium">
+              <strong>Medium:</strong> Game Over at ECO / HAP / ENV ≤ 20 or SEC ≤ 40.
+            </p>
+            <p class="difficulty-detail" data-difficulty="hard">
+              <strong>Hard:</strong> Game Over at ECO / HAP / ENV ≤ 30 or SEC ≤ 50.
+            </p>
+          </div>
+
           <p class="difficulty-note">
-            Multipliers apply to negative effects only. Positive effects remain
-            unchanged.
+            Multipliers apply to negative effects only. Positive effects remain unchanged.
           </p>
         </section>
 

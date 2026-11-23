@@ -10,21 +10,28 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <script src="{{ url_for('static', filename='menu.js') }}"></script>
-
   <body>
+    <script src="{{ url_for('static', filename='menu.js') }}"></script>
     <main class="menu-container">
-      <div class="game-logo" aria-hidden="true">★</div>
+      <img
+        src="{{ url_for('static', filename='images/game-logo.png') }}"
+        alt="Become the Leader official game emblem"
+        class="game-logo-image"
+      />
 
       <h1>BECOME THE LEADER</h1>
 
-      <p class="subtitle">
-        Three countries. 10 rounds. Decisions with consequences.
-      </p>
+      <p class="subtitle">Three nations. Ten rounds. One leadership journey.</p>
 
-      <p class="availability">Finland is currently playable.</p>
+      <p class="availability">Finland available now.</p>
 
       <nav class="menu-buttons" aria-label="Main menu">
         <button type="button" id="new-game">New Game</button>

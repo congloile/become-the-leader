@@ -5,9 +5,21 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #101827, #1d3043);
+    font-family: "Inter", Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #101827,
+        #1d3043
+    );
+
     color: #ffffff;
+}
+
+.menu-button {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.3px;
 }
 
 .menu-container {
@@ -23,31 +35,32 @@ body {
     text-align: center;
 }
 
-.game-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    width: 85px;
-    height: 85px;
-    border: 2px solid #e9bd63;
+.game-logo-image {
+    display: block;
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+
+    /* Hide the black square corners */
     border-radius: 50%;
 
-    color: #e9bd63;
-    font-size: 40px;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
+
 
 h1 {
     margin: 0;
+    font-family: "Cinzel", Georgia, serif;
     font-size: clamp(28px, 5vw, 46px);
-    letter-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     color: #f5d38b;
 }
 
 .subtitle {
     margin: 18px 0 8px;
-    font-size: 18px;
+    font-size: px;
     line-height: 1.6;
     color: #d3dce6;
 }
@@ -77,8 +90,8 @@ h1 {
     background-color: #e9bd63;
     color: #142032;
 
-    font-size: 17px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
 
     cursor: pointer;
     transition: background-color 0.2s,
@@ -86,7 +99,8 @@ h1 {
 }
 
 .menu-buttons button:hover {
-    background-color: #f8d995;
+    background-color: #142032;
+    color: #e9bd63;
     transform: translateY(-2px);
 }
 

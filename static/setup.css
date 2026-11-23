@@ -1,58 +1,81 @@
+/* Player Setup — single source of styles, no override duplicates */
 .setup-container {
     max-width: 1050px;
     margin: 0 auto;
     padding: 40px 24px 70px;
+    font-family: "Inter", Arial, sans-serif;
 }
 
+/* Header */
 .setup-header {
     text-align: center;
     margin-bottom: 40px;
+}
+
+.setup-header h1 {
+    margin: 12px 0;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: clamp(32px, 4.5vw, 46px);
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .setup-header p {
     color: #c5d1dc;
 }
 
-.setup-header h1 {
-    margin: 12px 0;
-}
-
+/* Sections and player name */
 .setup-section {
     margin-bottom: 35px;
 }
 
 .setup-section h2 {
-    color: #f5d38b;
-    font-size: 23px;
     margin-bottom: 18px;
+    color: #f5d38b;
+    font-size: 21px;
+    font-weight: 600;
 }
 
-.setup-section label {
+.setup-section label:not(.difficulty-card):not(.visually-hidden) {
     display: block;
     margin-bottom: 10px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
 }
 
 #player-name {
     width: 100%;
     max-width: 420px;
     padding: 14px;
-
     background: #24364a;
     border: 1px solid #66809a;
     border-radius: 8px;
-
-    color: white;
+    color: #ffffff;
+    font-family: inherit;
     font-size: 16px;
 }
 
-#player-name:focus {
+#player-name:focus-visible {
     outline: 2px solid #e9bd63;
+    outline-offset: 2px;
 }
 
+/* Country and difficulty cards */
 .country-grid,
 .difficulty-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
 }
 
@@ -80,6 +103,7 @@
 
 .country-card h3 {
     margin: 12px 0 5px;
+    font-weight: 600;
 }
 
 .country-card p {
@@ -94,10 +118,10 @@
     font-size: 13px;
 }
 
+/* Finland victory goals */
 .goals-box {
     margin-top: 20px;
     padding: 20px 24px;
-
     background: #223449;
     border-left: 4px solid #e9bd63;
     border-radius: 8px;
@@ -123,36 +147,39 @@
     margin-top: 14px;
 }
 
+/* Compact difficulty cards */
 .difficulty-card {
-    display: flex !important;
+    min-height: 130px;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 12px;
-
+    gap: 8px;
     cursor: pointer;
-    transition: border-color 0.2s,
-                background-color 0.2s;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.difficulty-card input {
+    margin: 0;
+    accent-color: #e9bd63;
 }
 
 .difficulty-card strong {
     font-size: 20px;
+    font-weight: 600;
 }
 
-.difficulty-card span {
+.difficulty-multiplier {
     font-size: 14px;
     color: #d3dce6;
 }
 
-.difficulty-card input {
-    accent-color: #e9bd63;
-}
-
-.difficulty-card:hover {
+.difficulty-card:hover,
+.difficulty-card:has(input:checked) {
     border-color: #e9bd63;
 }
 
 .difficulty-card:has(input:checked) {
-    border-color: #e9bd63;
     background: #344355;
 }
 
@@ -161,11 +188,42 @@
     outline-offset: 3px;
 }
 
+/* Show only the rules for the selected difficulty. No JS changes needed. */
+.difficulty-rules-box {
+    margin-top: 16px;
+    padding: 13px 18px;
+    background: #223449;
+    border-left: 3px solid #e9bd63;
+    border-radius: 8px;
+    color: #d3dce6;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.difficulty-rules-box p {
+    margin: 0;
+}
+
+.difficulty-detail {
+    display: none;
+}
+
+.difficulty-section:has(input[name="difficulty"]:checked) .difficulty-hint {
+    display: none;
+}
+
+.difficulty-section:has(input[value="easy"]:checked) .difficulty-detail[data-difficulty="easy"],
+.difficulty-section:has(input[value="medium"]:checked) .difficulty-detail[data-difficulty="medium"],
+.difficulty-section:has(input[value="hard"]:checked) .difficulty-detail[data-difficulty="hard"] {
+    display: block;
+}
+
 .difficulty-note {
     font-size: 14px;
     margin-top: 14px;
 }
 
+/* Actions and form feedback */
 .setup-actions {
     display: flex;
     justify-content: space-between;
@@ -177,14 +235,16 @@
     padding: 15px 35px;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
     cursor: pointer;
 }
 
 #back-button {
     background: #42566e;
-    color: white;
+    color: #ffffff;
 }
 
 #start-button {
@@ -202,6 +262,26 @@
     color: #f5d38b;
     margin-top: 20px;
 }
+
+.setup-actions button {
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+#back-button:hover {
+    background-color: transparent;
+    color: #a9bdd3;
+    border-color: #42566e;
+}
+
+#start-button:hover:not(:disabled) {
+    background-color: #142032;
+    color: #e9bd63;
+    border-color: #e9bd63;
+}
+
 
 @media (max-width: 700px) {
     .country-grid,
