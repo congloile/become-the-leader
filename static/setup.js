@@ -79,8 +79,8 @@ setupForm.addEventListener("submit", async (event) => {
 
         console.log("Game created:", result);
 
-        // Go to Game Dashboard
-        window.location.href = "/dashboard";
+        // Go to Game Decision page
+        window.location.href = "/decision";
 
 
     } catch (error) {

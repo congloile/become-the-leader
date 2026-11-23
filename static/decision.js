@@ -11,6 +11,8 @@ const difficultyRules = {
 
 let currentRound = null;
 let decisionSubmitted = false;
+let selectedChoiceId = null;
+let selectedButton = null;
 
 function getPhase(round) {
     if (round <= 3) {
@@ -137,24 +139,46 @@ async function submitChoice(choiceId, button) {
     }
 }
 
+
 function renderChoices(choices) {
     choicesContainer.replaceChildren();
+
+    selectedChoiceId = null;
+    selectedButton = null;
 
     for (const choice of choices) {
         const button = document.createElement("button");
 
         button.type = "button";
         button.className = "policy-button";
-        button.textContent =
-            `${choice.id}. ${choice.text}`;
+        button.textContent = `${choice.id}. ${choice.text}`;
 
         button.addEventListener("click", () => {
-            submitChoice(choice.id, button);
+            if (decisionSubmitted) {
+                return;
+            }
+
+            // Remove highlight from previous selection
+            document.querySelectorAll(".policy-button")
+                .forEach((item) => {
+                    item.classList.remove("selected");
+                });
+
+            // Highlight the selected policy
+            button.classList.add("selected");
+
+            // Remember the selection
+            selectedChoiceId = choice.id;
+            selectedButton = button;
+
+            message.textContent =
+                `Selected: ${choice.id}. ${choice.text}`;
         });
 
         choicesContainer.appendChild(button);
     }
 }
+
 
 async function loadDecision() {
     if (!gameId) {
@@ -176,8 +200,7 @@ async function loadDecision() {
         const game = result.game;
 
         if (game.status !== "playing") {
-            message.textContent =
-                `Game has ended: ${game.status}`;
+            window.location.replace("/results");
             return;
         }
 
@@ -206,6 +229,23 @@ async function loadDecision() {
             "Choose the policy you believe is best for your country.";
 
         renderIndicators(game);
+
+        // Display current progress towards victory goals
+        document.getElementById("goal-eco").textContent =
+            `${game.indicators.ECO} / 70`;
+
+        document.getElementById("goal-hap").textContent =
+            `${game.indicators.HAP} / 80`;
+
+        document.getElementById("goal-env").textContent =
+            `${game.indicators.ENV} / 75`;
+
+        const rules = difficultyRules[game.difficulty];
+
+        document.getElementById("goal-limits").textContent =
+            `Game Over: ECO/HAP/ENV ≤ ${rules.limit}; ` +
+            `Security ≤ ${rules.secLimit}.`;
+
         renderChoices(scenario.choices);
 
         console.log("Scenario loaded:", scenario);
