@@ -80,6 +80,24 @@ async function loadResults() {
             );
         }
 
+
+ // Security is a survival requirement, not a victory goal
+const securityLimit = limits[game.difficulty].security;
+const securitySafe = stats.SEC > securityLimit;
+
+const securityHeading = document.createElement("h3");
+securityHeading.className = "security-requirement-title";
+securityHeading.textContent = "Security Requirement";
+goalsContainer.appendChild(securityHeading);
+
+addRow(
+    goalsContainer,
+    `Security > ${securityLimit} (${game.difficulty.toUpperCase()})`,
+    `${stats.SEC} — ${securitySafe ? "SAFE" : "LIMIT REACHED"}`,
+    securitySafe ? "goal-met" : "goal-missed"
+);
+
+
         const title = document.getElementById("result-title");
         const description =
             document.getElementById("result-description");
@@ -88,9 +106,7 @@ async function loadResults() {
         if (game.status === "victory") {
             title.textContent = "VICTORY!";
 
-            description.textContent =
-                `${game.player_name} successfully led Finland ` +
-                `through all 10 rounds (${game.difficulty}).`;
+            description.textContent = "";
 
             const score = Object.values(stats)
                 .reduce((total, value) => total + value, 0);

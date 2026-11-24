@@ -10,4 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error("New Game button not found!");
     }
+
+    // High Scores button
+    const highScoresButton =
+        document.getElementById("high-scores");
+
+    if (highScoresButton) {
+        highScoresButton.addEventListener("click", () => {
+            window.location.href = "/highscores";
+        });
+    } else {
+        console.error("High Scores button not found!");
+    }
+
 });

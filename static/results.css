@@ -1,47 +1,87 @@
+/* ========================================
+   BECOME THE LEADER — RESULTS SCREEN
+   ======================================== */
+
+/* Main layout and page heading */
 .results-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 45px 24px 70px;
+    padding: 40px 24px 70px;
+    font-family: "Inter", Arial, sans-serif;
 }
 
-.results-container header {
+.results-header {
+    margin-bottom: 30px;
     text-align: center;
-    margin-bottom: 35px;
+}
+
+.results-header h1 {
+    margin: 0 0 16px;
+    color: #f5d38b;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.25;
 }
 
 #result-title {
-    font-size: 36px;
+    margin: 0 0 12px;
     color: #f5d38b;
-    margin-top: 30px;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: clamp(26px, 3vw, 32px);
+    font-weight: 550;
+    line-height: 1.3;
 }
 
 #result-description {
+    margin: 0;
     color: #d3dce6;
+    font-size: 16px;
     line-height: 1.7;
 }
 
+/* Shared result panels */
 .result-panel {
-    padding: 25px;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
+    padding: 28px;
     background: #223449;
     border: 1px solid #42566e;
     border-radius: 12px;
-}
-
-.result-panel h2 {
-    color: #f5d38b;
 }
 
 .result-panel[hidden] {
     display: none;
 }
 
+.result-panel h2 {
+    margin: 0 0 18px;
+    color: #f5d38b;
+    font-size: clamp(20px, 2.5vw, 24px);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Indicators and victory goals */
 .result-row {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    align-items: baseline;
+    gap: 16px;
     padding: 13px 0;
     border-bottom: 1px solid #42566e;
+    color: #f1f4fa;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.result-row:last-child {
+    border-bottom: 0;
+}
+
+.result-row strong {
+    flex-shrink: 0;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
 }
 
 .goal-met {
@@ -53,15 +93,47 @@
 }
 
 #result-reason {
+    margin: 18px 0 0;
     color: #f5d38b;
+    font-size: 15px;
     line-height: 1.7;
 }
 
+#result-reason:empty {
+    display: none;
+}
+
+/* Compact final score card */
+#score-panel:not([hidden]) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+#score-panel h2 {
+    margin: 0;
+}
+
 #final-score {
-    font-size: 40px;
-    font-weight: bold;
+    margin: 0;
     color: #f5d38b;
+    font-size: clamp(32px, 4vw, 40px);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+}
+
+/* Status and navigation */
+#result-error {
+    margin: 0 0 20px;
+    color: #ff9999;
+    line-height: 1.6;
     text-align: center;
+}
+
+#result-error:empty {
+    display: none;
 }
 
 .result-actions {
@@ -72,32 +144,75 @@
 }
 
 .result-actions button {
-    padding: 16px 30px;
-    border: none;
+    padding: 15px 30px;
+    border: 1px solid transparent;
     border-radius: 8px;
-    font-weight: bold;
+    font-family: inherit;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+#menu-button {
+    background: #42566e;
+    color: #ffffff;
+}
+
+#menu-button:hover:not(:disabled) {
+    background: transparent;
+    color: #a9bdd3;
+    border-color: #42566e;
 }
 
 #retry-button {
     background: #e9bd63;
     color: #142032;
+    border-color: #e9bd63;
 }
 
-#menu-button {
-    background: #42566e;
-    color: white;
+#retry-button:hover:not(:disabled) {
+    background: #142032;
+    color: #e9bd63;
 }
 
-#result-error {
-    color: #ff9999;
-    text-align: center;
+.result-actions button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
 }
 
-@media (max-width: 600px) {
+#result-description:empty {
+    display: none;
+}
+
+/* Security requirement */
+
+.security-requirement-title {
+    margin: 24px 0 4px;
+    color: #f5d38b;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .results-container {
+        padding: 25px 18px 50px;
+    }
+
+    .result-panel {
+        padding: 20px;
+    }
+
+    .result-row {
+        gap: 10px;
+        font-size: 14px;
+    }
+
     .result-actions button {
         flex: 1;
-        padding: 15px;
+        padding: 15px 12px;
     }
 }

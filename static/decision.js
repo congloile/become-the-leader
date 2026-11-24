@@ -2,6 +2,7 @@ const gameId = sessionStorage.getItem("game_id");
 
 const message = document.getElementById("decision-message");
 const choicesContainer = document.getElementById("choices-container");
+const confirmButton = document.getElementById("confirm-button");
 
 const difficultyRules = {
     easy: { limit: 10, secLimit: 20 },
@@ -146,6 +147,9 @@ function renderChoices(choices) {
     selectedChoiceId = null;
     selectedButton = null;
 
+    confirmButton.disabled = true;
+    confirmButton.textContent = "Confirm Decision";
+
     for (const choice of choices) {
         const button = document.createElement("button");
 
@@ -171,12 +175,61 @@ function renderChoices(choices) {
             selectedChoiceId = choice.id;
             selectedButton = button;
 
+            // Enable the confirmation button
+            confirmButton.disabled = false;
+            confirmButton.textContent =
+                `Confirm Decision — Option ${choice.id}`;
+
             message.textContent =
                 `Selected: ${choice.id}. ${choice.text}`;
+
+            // Show qualitative analysis without revealing effects.
+            renderPolicyAnalysis(choice);
         });
 
         choicesContainer.appendChild(button);
     }
+}
+
+
+// Shared by all rounds and countries: read analysis from each choice.
+function renderPolicyAnalysis(choice) {
+    const panel = document.getElementById("policy-preview");
+    if (!panel) {
+        console.warn("Missing #policy-preview in decision.html");
+        return;
+    }
+
+    const analysis = choice.analysis || {};
+
+    document.getElementById("preview-title").textContent =
+        `Policy Analysis — ${choice.id}. ${choice.text}`;
+
+    document.getElementById("preview-summary").textContent =
+        analysis.summary || "Analysis is being prepared for this policy.";
+
+    for (const [id, items] of [
+        ["preview-pros", analysis.benefits],
+        ["preview-cons", analysis.risks]
+    ]) {
+        const list = document.getElementById(id);
+        list.replaceChildren();
+
+        if (!Array.isArray(items) || items.length === 0) {
+            const item = document.createElement("li");
+            item.textContent = "Details will be added soon.";
+            list.appendChild(item);
+            continue;
+        }
+
+        for (const text of items) {
+            const item = document.createElement("li");
+            item.textContent = text;
+            list.appendChild(item);
+        }
+    }
+
+    panel.hidden = false;
 }
 
 
@@ -263,5 +316,25 @@ document.getElementById("menu-button")
             window.location.href = "/";
         }
     });
+
+
+// Confirm the selected policy
+confirmButton.addEventListener("click", () => {
+    if (
+        decisionSubmitted ||
+        selectedChoiceId === null ||
+        selectedButton === null ||
+        currentRound === null
+    ) {
+        return;
+    }
+
+    // Prevent repeated confirmation clicks
+    confirmButton.disabled = true;
+
+    // Submit only after confirmation
+    submitChoice(selectedChoiceId, selectedButton);
+});
+
 
 loadDecision();

@@ -2,82 +2,701 @@
   {
     "id": 1,
     "title": "Energy Crisis",
+    "description": "Finland faces pressure to keep electricity affordable while maintaining a reliable, low-carbon energy system. Your government must weigh immediate relief against long-term investment and energy dependence.",
     "choices": [
-      {"id": "A", "text": "Subsidize Electricity Bills", "effects": {"ECO": -6, "HAP": 9, "ENV": 0, "SEC": 0}},
-      {"id": "B", "text": "Invest in Nuclear Energy", "effects": {"ECO": -3, "HAP": 2, "ENV": 8, "SEC": 6}},
-      {"id": "C", "text": "Resume Russian Energy Imports", "effects": {"ECO": 12, "HAP": 7, "ENV": -3, "SEC": -8}}
+      {
+        "id": "A",
+        "text": "Subsidize Electricity Bills",
+        "analysis": {
+          "summary": "Provide temporary financial assistance to households facing high electricity bills.",
+          "benefits": [
+            "Reduces the financial burden on households.",
+            "Provides immediate support during an energy crisis."
+          ],
+          "risks": [
+            "Increases government expenditure.",
+            "Does not directly improve long-term energy independence."
+          ]
+        },
+        "outcome": {
+          "summary": "Temporary bill subsidies ease household pressure during the energy crisis. The immediate social benefit comes at a fiscal cost, while the country's energy supply remains structurally unchanged.",
+          "impacts": {
+            "ECO": "Funding electricity subsidies adds to public expenditure, reducing the government's available economic resources.",
+            "HAP": "Lower electricity bills relieve pressure on family budgets and increase short-term public satisfaction.",
+            "ENV": "Bill subsidies do not directly change electricity production or emissions in this game scenario.",
+            "SEC": "The measure does not change Finland's dependence on energy suppliers or its security posture in this scenario."
+          }
+        },
+        "effects": {
+          "ECO": -6,
+          "HAP": 9,
+          "ENV": 0,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Invest in Nuclear Energy",
+        "analysis": {
+          "summary": "Invest in nuclear power to strengthen Finland's long-term electricity supply and reduce dependence on imported energy.",
+          "benefits": [
+            "Supports low-carbon electricity production.",
+            "Strengthens long-term energy security and independence."
+          ],
+          "risks": [
+            "Requires substantial upfront investment and long construction periods.",
+            "Does not provide immediate relief from high electricity prices."
+          ]
+        },
+        "outcome": {
+          "summary": "Investing in nuclear energy requires substantial resources now but supports a more reliable, low-carbon electricity system over time. The simulation rewards those long-term gains in environmental and energy security.",
+          "impacts": {
+            "ECO": "Planning and financing new nuclear capacity create an initial economic cost before the investment delivers returns.",
+            "HAP": "A credible plan for future electricity supply gives households a modest confidence benefit, despite limited immediate relief.",
+            "ENV": "Additional low-carbon generation can reduce reliance on higher-emission electricity sources over time.",
+            "SEC": "More reliable domestic generation reduces exposure to imported energy and external supply disruptions."
+          }
+        },
+        "effects": {
+          "ECO": -3,
+          "HAP": 2,
+          "ENV": 8,
+          "SEC": 6
+        }
+      },
+      {
+        "id": "C",
+        "text": "Resume Russian Energy Imports",
+        "analysis": {
+          "summary": "Seek to restore energy imports from Russia to reduce energy costs and support short-term economic activity.",
+          "benefits": [
+            "Could reduce energy costs for households and businesses.",
+            "May provide short-term economic relief for energy-intensive industries."
+          ],
+          "risks": [
+            "Increases dependence on a geopolitically risky energy supplier.",
+            "Could conflict with EU restrictions and weaken Finland's national security."
+          ]
+        },
+        "outcome": {
+          "summary": "In this hypothetical scenario, renewed Russian energy imports lower short-term costs for households and businesses. Those gains are offset by environmental pressure and greater geopolitical dependence; real-world imports face EU restrictions.",
+          "impacts": {
+            "ECO": "Cheaper imported energy reduces some operating costs, improving business activity in the simulated outcome.",
+            "HAP": "Lower energy expenses provide short-term relief to households and improve perceived living conditions.",
+            "ENV": "In the game model, renewed reliance on conventional imported energy slows progress towards cleaner supply.",
+            "SEC": "Dependence on a geopolitically sensitive supplier increases vulnerability to political pressure and disruptions."
+          }
+        },
+        "effects": {
+          "ECO": 12,
+          "HAP": 7,
+          "ENV": -3,
+          "SEC": -8
+        }
+      }
     ]
   },
   {
     "id": 2,
     "title": "Education Crisis",
+    "description": "Schools are under pressure to maintain educational quality and equal opportunities while public resources are limited. Your government must decide how education funding should be distributed.",
     "choices": [
-      {"id": "A", "text": "Increase Public Education Funding", "effects": {"ECO": -3, "HAP": 8, "ENV": 0, "SEC": 0}},
-      {"id": "B", "text": "Performance Based School Funding", "effects": {"ECO": 3, "HAP": -5, "ENV": 0, "SEC": 0}}
+      {
+        "id": "A",
+        "text": "Increase Public Education Funding",
+        "analysis": {
+          "summary": "Allocate additional public funding to schools, teaching staff, and student support services.",
+          "benefits": [
+            "May improve learning conditions and access to support for students.",
+            "Can reduce differences in educational opportunities between communities."
+          ],
+          "risks": [
+            "Requires additional public spending when budgets are already constrained.",
+            "Higher funding alone does not guarantee better outcomes without effective implementation."
+          ]
+        },
+        "outcome": {
+          "summary": "More school funding improves access to teaching and student support. The social benefits are positive, but they require additional public resources.",
+          "impacts": {
+            "ECO": "Hiring staff and improving school services increase spending before longer-term educational returns can emerge.",
+            "HAP": "Better learning conditions and more equitable support improve student and family wellbeing.",
+            "ENV": "This education funding decision has no direct environmental effect in the game model.",
+            "SEC": "The simulation does not assign an immediate national security change to this education measure."
+          }
+        },
+        "effects": {
+          "ECO": -3,
+          "HAP": 8,
+          "ENV": 0,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Performance Based School Funding",
+        "analysis": {
+          "summary": "Link a larger share of school funding to measurable results and institutional performance.",
+          "benefits": [
+            "Creates incentives to monitor outcomes and use limited resources efficiently.",
+            "May help identify effective teaching practices and successful programmes."
+          ],
+          "risks": [
+            "Could disadvantage schools serving students who need more support.",
+            "May encourage a narrow focus on measured results rather than broader learning and wellbeing."
+          ]
+        },
+        "outcome": {
+          "summary": "Linking school funding to performance improves the model's measure of resource efficiency, but it can deepen inequality between schools and weaken public satisfaction.",
+          "impacts": {
+            "ECO": "More targeted spending and accountability improve the efficiency of limited public funds in this scenario.",
+            "HAP": "Schools serving disadvantaged communities may lose resources, reducing perceived fairness and wellbeing.",
+            "ENV": "No direct environmental effect is modelled from changing school funding criteria.",
+            "SEC": "School performance funding does not directly alter Finland's security position in this round."
+          }
+        },
+        "effects": {
+          "ECO": 3,
+          "HAP": -5,
+          "ENV": 0,
+          "SEC": 0
+        }
+      }
     ]
   },
   {
     "id": 3,
     "title": "Forests at a Crossroads",
+    "description": "Forests support Finland's jobs, exports, biodiversity, and climate goals. The country must decide how much priority to give to timber production versus protecting forest ecosystems.",
     "choices": [
-      {"id": "A", "text": "Expand Logging", "effects": {"ECO": 9, "HAP": 3, "ENV": -12, "SEC": -3}},
-      {"id": "B", "text": "Protect Forests", "effects": {"ECO": -6, "HAP": 2, "ENV": 12, "SEC": 3}}
+      {
+        "id": "A",
+        "text": "Expand Logging",
+        "analysis": {
+          "summary": "Allow increased timber harvesting to support the forest industry and economic activity.",
+          "benefits": [
+            "Can create business activity and employment in forestry-dependent regions.",
+            "Provides more raw material for wood-processing industries and exports."
+          ],
+          "risks": [
+            "Intensive harvesting can weaken forest carbon sinks and damage habitats.",
+            "Long-term ecosystem resilience and biodiversity may suffer if safeguards are insufficient."
+          ]
+        },
+        "outcome": {
+          "summary": "Expanded logging stimulates the forestry economy and supports some jobs. Increased harvesting, however, damages ecological outcomes and slightly weakens long-term resource resilience in the simulation.",
+          "impacts": {
+            "ECO": "Greater timber supply supports processing, exports, and related economic activity.",
+            "HAP": "Employment and incomes in forestry-dependent communities provide a modest wellbeing benefit.",
+            "ENV": "More intensive harvesting reduces habitat protection and can weaken forests' capacity to store carbon.",
+            "SEC": "The game treats depletion of important domestic natural resources as a small loss of long-term national resilience."
+          }
+        },
+        "effects": {
+          "ECO": 9,
+          "HAP": 3,
+          "ENV": -12,
+          "SEC": -3
+        }
+      },
+      {
+        "id": "B",
+        "text": "Protect Forests",
+        "analysis": {
+          "summary": "Strengthen forest conservation and limit harvesting in ecologically sensitive areas.",
+          "benefits": [
+            "Protects habitats, biodiversity, and important forest ecosystems.",
+            "Can support carbon storage and the long-term resilience of natural resources."
+          ],
+          "risks": [
+            "Restricts the supply of timber available to industry.",
+            "May reduce short-term income and employment opportunities in some forestry regions."
+          ]
+        },
+        "outcome": {
+          "summary": "Stronger forest protection preserves biodiversity and the long-term value of natural assets. Restrictions on harvesting reduce near-term industrial output, creating an economic trade-off.",
+          "impacts": {
+            "ECO": "Limits on timber harvesting restrict output and revenue for parts of the forest industry.",
+            "HAP": "Protecting valued landscapes and ecosystems provides a modest public wellbeing benefit.",
+            "ENV": "Conservation safeguards habitats, biodiversity, and forests' potential contribution to carbon storage.",
+            "SEC": "Protecting strategic natural assets modestly strengthens resource resilience in the game model."
+          }
+        },
+        "effects": {
+          "ECO": -6,
+          "HAP": 2,
+          "ENV": 12,
+          "SEC": 3
+        }
+      }
     ]
   },
   {
     "id": 4,
     "title": "Healthcare Under Pressure",
+    "description": "Healthcare services face rising demand, staffing pressures, and difficult budget decisions. Your government must find a way to sustain access to care without neglecting public finances.",
     "choices": [
-      {"id": "A", "text": "Redirect Government Funding", "effects": {"ECO": -6, "HAP": 8, "ENV": 0, "SEC": 0}},
-      {"id": "B", "text": "Raise Taxes", "effects": {"ECO": 3, "HAP": -3, "ENV": 0, "SEC": 0}}
+      {
+        "id": "A",
+        "text": "Redirect Government Funding",
+        "analysis": {
+          "summary": "Reallocate public resources towards healthcare services and patient access.",
+          "benefits": [
+            "Can help reduce pressure on care services and improve access for patients.",
+            "Signals a clear commitment to public health and social wellbeing."
+          ],
+          "risks": [
+            "Increases pressure on the government budget or requires cuts elsewhere.",
+            "Shifting funds away from other services can create new problems in those sectors."
+          ]
+        },
+        "outcome": {
+          "summary": "Redirecting funding towards healthcare improves access to treatment and public wellbeing. The government pays for that improvement through added budget pressure or reduced spending elsewhere.",
+          "impacts": {
+            "ECO": "Moving more public resources into healthcare creates a short-term fiscal cost in this simulation.",
+            "HAP": "Better access to services and less pressure on patients raise satisfaction and wellbeing.",
+            "ENV": "Reallocating healthcare funding has no direct environmental effect in this scenario.",
+            "SEC": "No direct national security effect is assigned to this healthcare funding choice."
+          }
+        },
+        "effects": {
+          "ECO": -6,
+          "HAP": 8,
+          "ENV": 0,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Raise Taxes",
+        "analysis": {
+          "summary": "Raise additional tax revenue to strengthen the government's capacity to finance essential services.",
+          "benefits": [
+            "Can improve the sustainability of public finances and future service funding.",
+            "May reduce the need for immediate borrowing to cover public spending."
+          ],
+          "risks": [
+            "Higher taxes can reduce disposable income or increase costs for businesses.",
+            "The measure may be unpopular, particularly during a period of economic strain."
+          ]
+        },
+        "outcome": {
+          "summary": "Higher taxes improve the simulated public-finance position, providing a stronger basis for funding services. The burden on households and businesses nevertheless reduces public satisfaction.",
+          "impacts": {
+            "ECO": "Additional revenue strengthens the budget balance in the game's economic indicator, despite possible costs to private spending.",
+            "HAP": "Households and businesses face higher tax burdens, reducing disposable income or perceived fairness.",
+            "ENV": "This general tax increase has no separately modelled environmental effect.",
+            "SEC": "The game does not assign an immediate security change to this tax policy."
+          }
+        },
+        "effects": {
+          "ECO": 3,
+          "HAP": -3,
+          "ENV": 0,
+          "SEC": 0
+        }
+      }
     ]
   },
   {
     "id": 5,
     "title": "The Future of Transport",
+    "description": "Finland needs cleaner transport, but travel patterns differ greatly between cities and rural areas. Your government must choose where public investment can make the most difference.",
     "choices": [
-      {"id": "A", "text": "Expand Public Transport", "effects": {"ECO": -5, "HAP": 6, "ENV": 9, "SEC": 0}},
-      {"id": "B", "text": "Support EVs and Rural Charging", "effects": {"ECO": -3, "HAP": 3, "ENV": 7, "SEC": 0}}
+      {
+        "id": "A",
+        "text": "Expand Public Transport",
+        "analysis": {
+          "summary": "Expand public transport networks and service frequency, especially on high-demand routes.",
+          "benefits": [
+            "Makes everyday travel more accessible for people without private cars.",
+            "Can reduce congestion and transport emissions when more people choose shared transit."
+          ],
+          "risks": [
+            "Requires substantial investment and continued operating subsidies.",
+            "Low population density can make frequent services expensive outside urban areas."
+          ]
+        },
+        "outcome": {
+          "summary": "Expanding public transport improves mobility and offers cleaner travel alternatives. The benefits for residents and emissions require sizeable investment and ongoing operations.",
+          "impacts": {
+            "ECO": "Building and operating more transit services requires substantial public funding.",
+            "HAP": "Better connections make commuting and essential journeys easier for more residents.",
+            "ENV": "More viable alternatives to private car use can lower transport emissions and congestion.",
+            "SEC": "Public transport expansion does not directly alter the national security indicator in this scenario."
+          }
+        },
+        "effects": {
+          "ECO": -5,
+          "HAP": 6,
+          "ENV": 9,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Support EVs and Rural Charging",
+        "analysis": {
+          "summary": "Support electric vehicle adoption and extend charging infrastructure into underserved rural areas.",
+          "benefits": [
+            "Makes lower-emission driving more practical for people who depend on cars.",
+            "Improves charging access across the country rather than only in major cities."
+          ],
+          "risks": [
+            "Public incentives and charging infrastructure still require funding.",
+            "Benefits may reach car owners first and do less for people who cannot afford a vehicle."
+          ]
+        },
+        "outcome": {
+          "summary": "Supporting electric vehicles and rural charging makes lower-emission driving more practical outside cities. The approach improves environmental outcomes but requires public investment and reaches people unevenly.",
+          "impacts": {
+            "ECO": "Charging infrastructure and vehicle incentives impose a public investment cost.",
+            "HAP": "Residents who depend on cars gain charging options and somewhat greater travel convenience.",
+            "ENV": "Replacing some combustion-engine journeys with electric travel reduces transport-related emissions in the model.",
+            "SEC": "The simulation assigns no direct security change to rural charging expansion."
+          }
+        },
+        "effects": {
+          "ECO": -3,
+          "HAP": 3,
+          "ENV": 7,
+          "SEC": 0
+        }
+      }
     ]
   },
   {
     "id": 6,
     "title": "The Russian Relations Dilemma",
+    "description": "Relations with Russia create a difficult trade-off between potential commercial opportunities and Finland's security commitments. Some proposed forms of cooperation may also conflict with current EU restrictions; this is a hypothetical policy scenario.",
     "choices": [
-      {"id": "A", "text": "Maintain Strategic Distance", "effects": {"ECO": -5, "HAP": -2, "ENV": 0, "SEC": 10}},
-      {"id": "B", "text": "Restore Pre War Economic Relations", "effects": {"ECO": 12, "HAP": 6, "ENV": -2, "SEC": -12}}
+      {
+        "id": "A",
+        "text": "Maintain Strategic Distance",
+        "analysis": {
+          "summary": "Maintain a cautious relationship with Russia and prioritise security coordination with European partners.",
+          "benefits": [
+            "Limits strategic dependence on a neighbouring state associated with major security risks.",
+            "Supports consistency with Finland's international commitments and security partnerships."
+          ],
+          "risks": [
+            "Reduces opportunities for cross-border trade and some business sectors.",
+            "Adjustment costs may place pressure on firms and communities with historical trade links."
+          ]
+        },
+        "outcome": {
+          "summary": "Maintaining strategic distance from Russia sacrifices some commercial opportunities and produces short-term adjustment costs. It substantially strengthens Finland's security position within the game.",
+          "impacts": {
+            "ECO": "Reduced cross-border trade opportunities create costs for companies and affected regions.",
+            "HAP": "Adjustment pressures and fewer economic opportunities modestly lower public satisfaction.",
+            "ENV": "This diplomatic stance has no direct environmental effect in the simulation.",
+            "SEC": "Reduced strategic dependence and closer alignment with security partners improve national resilience."
+          }
+        },
+        "effects": {
+          "ECO": -5,
+          "HAP": -2,
+          "ENV": 0,
+          "SEC": 10
+        }
+      },
+      {
+        "id": "B",
+        "text": "Restore Pre War Economic Relations",
+        "analysis": {
+          "summary": "Seek to restore extensive commercial relations with Russia, including activities that would require changes to existing EU restrictions.",
+          "benefits": [
+            "Could reopen some markets and supply channels in a hypothetical easing of restrictions.",
+            "May offer short-term economic opportunities for businesses previously active in bilateral trade."
+          ],
+          "risks": [
+            "Would face serious legal and diplomatic barriers under current EU sanctions.",
+            "Greater economic dependence could expose Finland to political pressure and security risks."
+          ]
+        },
+        "outcome": {
+          "summary": "In this hypothetical path, restoring extensive trade with Russia revives economic activity but sharply increases strategic dependence. Such restoration would require changes to applicable EU restrictions.",
+          "impacts": {
+            "ECO": "Reopened markets and supply channels stimulate commercial activity in the simulated scenario.",
+            "HAP": "New trade opportunities and potential price relief improve short-term public satisfaction.",
+            "ENV": "The model assigns a small environmental cost to renewed resource-intensive cross-border activity.",
+            "SEC": "Closer economic dependence increases exposure to geopolitical coercion, diplomatic conflict, and supply disruption."
+          }
+        },
+        "effects": {
+          "ECO": 12,
+          "HAP": 6,
+          "ENV": -2,
+          "SEC": -12
+        }
+      }
     ]
   },
   {
     "id": 7,
     "title": "The Unemployment Crisis",
+    "description": "Unemployment and weak household demand put pressure on public finances and social wellbeing. Your government must weigh incentives for businesses against direct support for families.",
     "choices": [
-      {"id": "A", "text": "Cut Corporate Taxes and Reduce Benefits", "effects": {"ECO": 5, "HAP": -3, "ENV": 0, "SEC": 0}},
-      {"id": "B", "text": "Support Household Purchasing Power", "effects": {"ECO": -3, "HAP": 6, "ENV": 0, "SEC": 0}}
+      {
+        "id": "A",
+        "text": "Cut Corporate Taxes and Reduce Benefits",
+        "analysis": {
+          "summary": "Reduce corporate taxes to encourage business activity while lowering some unemployment benefits.",
+          "benefits": [
+            "May improve incentives for investment and private-sector hiring.",
+            "Reduces some public transfer spending in the short term."
+          ],
+          "risks": [
+            "Lower benefits can increase financial insecurity for unemployed households.",
+            "Business tax cuts may not generate jobs quickly if demand remains weak."
+          ]
+        },
+        "outcome": {
+          "summary": "Lower corporate taxes and reduced unemployment benefits improve the game's near-term business incentive and fiscal measures. The loss of household support creates social costs.",
+          "impacts": {
+            "ECO": "Tax incentives and lower transfer spending improve the model's short-term economic balance.",
+            "HAP": "Reduced benefits make unemployment more financially difficult, lowering social wellbeing.",
+            "ENV": "This labour-market and tax package has no direct environmental effect in the game.",
+            "SEC": "No direct national security change is assigned to this employment policy."
+          }
+        },
+        "effects": {
+          "ECO": 5,
+          "HAP": -3,
+          "ENV": 0,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Support Household Purchasing Power",
+        "analysis": {
+          "summary": "Strengthen household purchasing power through targeted support for people facing financial strain.",
+          "benefits": [
+            "Helps families cover essential expenses and can improve social wellbeing.",
+            "May support local businesses by sustaining consumer demand."
+          ],
+          "risks": [
+            "Requires additional government spending or financing.",
+            "Demand support alone may not address structural barriers to employment."
+          ]
+        },
+        "outcome": {
+          "summary": "Targeted household support reduces financial strain and sustains demand. The game scores its immediate budget cost more heavily than any short-term economic stimulus.",
+          "impacts": {
+            "ECO": "Additional support spending reduces the economic indicator despite possible benefits from consumer demand.",
+            "HAP": "Families can better afford essentials, strengthening household security and overall wellbeing.",
+            "ENV": "Direct household income support has no separately modelled environmental effect.",
+            "SEC": "This policy does not directly affect defence or geopolitical security in the simulation."
+          }
+        },
+        "effects": {
+          "ECO": -3,
+          "HAP": 6,
+          "ENV": 0,
+          "SEC": 0
+        }
+      }
     ]
   },
   {
     "id": 8,
     "title": "Guns or Welfare",
+    "description": "Finland must divide limited public resources between national defence and social welfare. Both priorities matter, but expanding one can constrain the other.",
     "choices": [
-      {"id": "A", "text": "Increase Defence Spending", "effects": {"ECO": -7, "HAP": -6, "ENV": 0, "SEC": 12}},
-      {"id": "B", "text": "Prioritize Welfare Spending", "effects": {"ECO": -3, "HAP": 9, "ENV": 0, "SEC": -7}}
+      {
+        "id": "A",
+        "text": "Increase Defence Spending",
+        "analysis": {
+          "summary": "Increase defence investment in equipment, preparedness, and military capabilities.",
+          "benefits": [
+            "Can strengthen national readiness and deterrence.",
+            "Supports the ability to respond to changing regional security threats."
+          ],
+          "risks": [
+            "Places substantial pressure on public finances.",
+            "May require postponing welfare improvements or other domestic spending."
+          ]
+        },
+        "outcome": {
+          "summary": "More defence investment significantly strengthens military preparedness and deterrence. The programme imposes a heavy budget cost and limits resources available for welfare priorities.",
+          "impacts": {
+            "ECO": "Procurement and readiness spending draw heavily on available public funds.",
+            "HAP": "Fewer resources for domestic services and welfare reduce immediate public satisfaction.",
+            "ENV": "The game assigns no direct environmental change to this defence spending decision.",
+            "SEC": "Improved equipment, training, and readiness substantially raise national defence capability."
+          }
+        },
+        "effects": {
+          "ECO": -7,
+          "HAP": -6,
+          "ENV": 0,
+          "SEC": 12
+        }
+      },
+      {
+        "id": "B",
+        "text": "Prioritize Welfare Spending",
+        "analysis": {
+          "summary": "Give greater priority to healthcare, social support, and other welfare services within the available budget.",
+          "benefits": [
+            "Can improve daily wellbeing and support people facing hardship.",
+            "Reinforces access to essential public services."
+          ],
+          "risks": [
+            "Leaves less fiscal room for defence upgrades and preparedness.",
+            "Security capabilities may develop more slowly as regional risks evolve."
+          ]
+        },
+        "outcome": {
+          "summary": "Prioritising welfare delivers immediate benefits to residents but leaves less room for defence investment. The government faces a fiscal cost while security readiness falls in the game.",
+          "impacts": {
+            "ECO": "Expanded welfare commitments consume public resources and weaken the short-term budget position.",
+            "HAP": "Better access to healthcare and social support substantially improves everyday wellbeing.",
+            "ENV": "No direct environmental change is modelled from the spending allocation.",
+            "SEC": "Postponed defence upgrades reduce preparedness relative to the security needs assumed by the scenario."
+          }
+        },
+        "effects": {
+          "ECO": -3,
+          "HAP": 9,
+          "ENV": 0,
+          "SEC": -7
+        }
+      }
     ]
   },
   {
     "id": 9,
     "title": "The Public Debt Dilemma",
+    "description": "Public debt and persistent budget pressure force the government to consider unpopular fiscal measures. Spending restraint and additional revenue both carry economic and social costs.",
     "choices": [
-      {"id": "A", "text": "Implement Major Spending Cuts", "effects": {"ECO": 3, "HAP": -8, "ENV": 0, "SEC": 0}},
-      {"id": "B", "text": "Raise Consumption Taxes", "effects": {"ECO": -2, "HAP": -4, "ENV": 0, "SEC": 0}}
+      {
+        "id": "A",
+        "text": "Implement Major Spending Cuts",
+        "analysis": {
+          "summary": "Implement substantial cuts to selected government programmes to reduce expenditure.",
+          "benefits": [
+            "Can improve the budget balance and limit additional borrowing.",
+            "May create more fiscal room for future priorities if savings are sustained."
+          ],
+          "risks": [
+            "Cuts can reduce access to services and support that people rely on.",
+            "Lower public spending may weaken demand and cause hardship in affected communities."
+          ]
+        },
+        "outcome": {
+          "summary": "Major spending cuts improve the government's fiscal position in the simulation. Reduced services and financial support impose a particularly large social cost.",
+          "impacts": {
+            "ECO": "Lower expenditure improves the model's budget and debt outlook, even though real-world demand could also weaken.",
+            "HAP": "Cuts to services and benefits create hardship and reduce public satisfaction.",
+            "ENV": "The scenario does not assign a direct environmental change to these unspecified spending cuts.",
+            "SEC": "No direct defence or geopolitical security effect is modelled for this fiscal decision."
+          }
+        },
+        "effects": {
+          "ECO": 3,
+          "HAP": -8,
+          "ENV": 0,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Raise Consumption Taxes",
+        "analysis": {
+          "summary": "Increase taxes on consumption to raise government revenue without relying solely on spending cuts.",
+          "benefits": [
+            "Can generate additional revenue to support public finances.",
+            "Allows some services to remain funded without equally deep direct cuts."
+          ],
+          "risks": [
+            "Higher consumer prices reduce households' purchasing power.",
+            "Weaker consumption can weigh on businesses and affect lower-income households disproportionately."
+          ]
+        },
+        "outcome": {
+          "summary": "Higher consumption taxes raise revenue but make everyday purchases more expensive. The game models weaker demand and household purchasing power as the dominant short-term effects.",
+          "impacts": {
+            "ECO": "Higher consumer prices reduce spending and business demand enough to outweigh the modelled revenue benefit.",
+            "HAP": "Households lose purchasing power, with a greater burden on those spending more of their income on essentials.",
+            "ENV": "No distinct environmental change is assigned to this general consumption-tax increase.",
+            "SEC": "The simulation assigns no direct national security effect to this tax choice."
+          }
+        },
+        "effects": {
+          "ECO": -2,
+          "HAP": -4,
+          "ENV": 0,
+          "SEC": 0
+        }
+      }
     ]
   },
   {
     "id": 10,
     "title": "The Green Industrial Transition",
+    "description": "Finland wants stronger industrial competitiveness while meeting environmental commitments. Your final choice must balance new production and jobs against the ecological cost of industrial growth.",
     "choices": [
-      {"id": "A", "text": "Strengthen Strategic Industries", "effects": {"ECO": 9, "HAP": 5, "ENV": -8, "SEC": 4}},
-      {"id": "B", "text": "Enforce Environmental Standards", "effects": {"ECO": -5, "HAP": 3, "ENV": 9, "SEC": 0}}
+      {
+        "id": "A",
+        "text": "Strengthen Strategic Industries",
+        "analysis": {
+          "summary": "Accelerate investment in strategically important industries and prioritise industrial expansion.",
+          "benefits": [
+            "Can support employment, exports, and domestic production capacity.",
+            "Strengthens selected supply chains and economic resilience."
+          ],
+          "risks": [
+            "Rapid expansion can increase emissions, energy demand, and pressure on land and resources.",
+            "Weaker environmental safeguards can create longer-term ecological costs."
+          ]
+        },
+        "outcome": {
+          "summary": "Accelerated investment in strategic industries strengthens jobs, production, and important supply chains. The gains come with a sizeable environmental cost from industrial expansion.",
+          "impacts": {
+            "ECO": "Investment and new industrial output increase production, employment, and export opportunities.",
+            "HAP": "Job creation and stronger economic prospects support household confidence and wellbeing.",
+            "ENV": "Faster industrial expansion increases pressure on energy, land, resources, and pollution controls.",
+            "SEC": "More domestic capacity in strategic supply chains modestly strengthens economic and national resilience."
+          }
+        },
+        "effects": {
+          "ECO": 9,
+          "HAP": 5,
+          "ENV": -8,
+          "SEC": 4
+        }
+      },
+      {
+        "id": "B",
+        "text": "Enforce Environmental Standards",
+        "analysis": {
+          "summary": "Apply stronger environmental requirements to industrial activity and new investment.",
+          "benefits": [
+            "Can reduce pollution and protect ecosystems over the long term.",
+            "Encourages cleaner technologies and more responsible production."
+          ],
+          "risks": [
+            "Compliance and adaptation costs may slow some industrial projects.",
+            "Firms may postpone investments if requirements rise faster than their capacity to adjust."
+          ]
+        },
+        "outcome": {
+          "summary": "Stricter environmental standards protect ecosystems and encourage cleaner production. Compliance costs and slower projects reduce near-term economic activity, while wellbeing improves modestly.",
+          "impacts": {
+            "ECO": "Investment and compliance costs slow some industrial projects in the short term.",
+            "HAP": "Cleaner environments and confidence in environmental protection improve public wellbeing.",
+            "ENV": "Stronger safeguards reduce pollution and protect habitats and natural resources.",
+            "SEC": "The scenario does not assign a direct security change to these environmental rules."
+          }
+        },
+        "effects": {
+          "ECO": -5,
+          "HAP": 3,
+          "ENV": 9,
+          "SEC": 0
+        }
+      }
     ]
   }
 ]

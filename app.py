@@ -5,7 +5,8 @@ from game_storage import (
     init_db,
     save_game,
     load_game,
-    update_game_if_unchanged
+    update_game_if_unchanged,
+    get_high_scores
 )
 
 app = Flask(__name__)
@@ -21,7 +22,8 @@ def public_scenario(scenario):
         "choices": [
             {
                 "id": choice["id"],
-                "text": choice["text"]
+                "text": choice["text"],
+                "analysis": choice.get("analysis", {}),
             }
             for choice in scenario["choices"]
         ]
@@ -164,7 +166,8 @@ def choose_policy():
         "decision": {
             "round": requested_round,
             "choice_id": choice_id,
-            "text": choice["text"]
+            "text": choice["text"],
+            "outcome": choice.get("outcome", {})
         },
         "base_effects": choice["effects"],
         "before": before,
@@ -213,6 +216,29 @@ def consequence_page():
 @app.route("/results", methods=["GET"])
 def results_page():
     return render_template("results.html")
+
+@app.route("/highscores", methods=["GET"])
+def highscores_page():
+    return render_template("highscores.html")
+
+@app.route("/api/highscores", methods=["GET"])
+def high_scores():
+    country = request.args.get("country", "finland").strip().lower()
+    difficulty = request.args.get("difficulty", "easy").strip().lower()
+
+    if not country or len(country) > 40:
+        return jsonify({"error": "Invalid country"}), 400
+
+    if difficulty not in ("easy", "medium", "hard"):
+        return jsonify({"error": "Invalid difficulty"}), 400
+
+    scores = get_high_scores(country, difficulty, limit=10)
+
+    return jsonify({
+        "country": country,
+        "difficulty": difficulty,
+        "scores": scores
+    }), 200
 
 if __name__ == "__main__":
     app.run(debug=True)

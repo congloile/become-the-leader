@@ -1,0 +1,196 @@
+/* ========================================
+   BECOME THE LEADER — HIGH SCORES
+   ======================================== */
+
+/* Main layout */
+
+.highscores-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 24px 70px;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+.highscores-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.highscores-header h1 {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: clamp(26px, 4vw, 38px);
+    color: #f5d38b;
+}
+
+.highscores-header p {
+    color: #d3dce6;
+    line-height: 1.6;
+}
+
+/* Main panel */
+
+.highscores-panel {
+    padding: 28px;
+    background: #223449;
+    border: 1px solid #42566e;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+/* Country and difficulty filters */
+
+.highscores-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.highscores-filters label {
+    display: block;
+    margin-bottom: 10px;
+    color: #f5d38b;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.highscores-filters select {
+    width: 100%;
+    padding: 14px 16px;
+    background: #2d4258;
+    color: #ffffff;
+    border: 1px solid #50657b;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.highscores-filters select:hover {
+    border-color: #e9bd63;
+}
+
+.highscores-filters select:focus-visible {
+    outline: 2px solid #e9bd63;
+    outline-offset: 3px;
+}
+
+/* Leaderboard table */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.highscores-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.highscores-table th,
+.highscores-table td {
+    padding: 17px 16px;
+    border-bottom: 1px solid #42566e;
+    text-align: left;
+}
+
+.highscores-table th {
+    color: #f5d38b;
+    font-weight: 600;
+}
+
+.highscores-table td {
+    color: #ffffff;
+}
+
+.highscores-table th:first-child,
+.highscores-table td:first-child {
+    width: 90px;
+}
+
+.highscores-table th:last-child,
+.highscores-table td:last-child {
+    text-align: right;
+}
+
+.highscores-table tbody tr:hover {
+    background: rgba(233, 189, 99, 0.06);
+}
+
+/* Score highlighting */
+
+.highscores-table td:last-child {
+    color: #7edba1;
+    font-weight: 600;
+}
+
+/* Status messages */
+
+#scores-message {
+    color: #bac9d8;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+#scores-message:empty {
+    display: none;
+}
+
+/* Navigation */
+
+.highscores-actions {
+    margin-top: 30px;
+}
+
+#menu-button {
+    padding: 15px 30px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #42566e;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+#menu-button:hover {
+    background: transparent;
+    color: #a9bdd3;
+    border-color: #42566e;
+}
+
+#menu-button:focus-visible {
+    outline: 2px solid #e9bd63;
+    outline-offset: 3px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+    .highscores-container {
+        padding: 25px 18px;
+    }
+
+    .highscores-panel {
+        padding: 20px;
+    }
+
+    .highscores-filters {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .highscores-table th,
+    .highscores-table td {
+        padding: 14px 8px;
+        font-size: 14px;
+    }
+
+    #menu-button {
+        width: 100%;
+    }
+}

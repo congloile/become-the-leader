@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>High Scores - Become the Leader</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='highscores.css') }}"
+    />
+
+    <script
+      src="{{ url_for('static', filename='highscores.js') }}"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <main class="highscores-container">
+      <header class="highscores-header">
+        <h1>HIGH SCORES</h1>
+        <p>Top 10 victories by country and difficulty.</p>
+      </header>
+
+      <section class="highscores-panel">
+        <div class="highscores-filters">
+          <div>
+            <label for="country-select">Country</label>
+            <select id="country-select">
+              <option value="finland">Finland</option>
+              <option value="singapore" disabled>
+                Singapore — Coming Soon
+              </option>
+              <option value="newzealand" disabled>
+                New Zealand — Coming Soon
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <label for="difficulty-select">Difficulty</label>
+            <select id="difficulty-select">
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="highscores-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody id="scores-body"></tbody>
+          </table>
+        </div>
+
+        <p id="scores-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <div class="highscores-actions">
+        <button type="button" id="menu-button">Main Menu</button>
+      </div>
+    </main>
+  </body>
+</html>

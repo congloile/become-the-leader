@@ -69,3 +69,37 @@ def update_game_if_unchanged(game_id, old_game, new_game):
             if cursor.rowcount != 1:
                 raise ValueError("Game state has changed")
 
+def get_high_scores(country, difficulty, limit=10):
+    """Return the top victorious games for a country and difficulty."""
+
+    with closing(sqlite3.connect(DB_PATH)) as conn:
+        rows = conn.execute(
+            """
+            SELECT
+                json_extract(state, '$.player_name') AS player_name,
+                (
+                    json_extract(state, '$.indicators.ECO') +
+                    json_extract(state, '$.indicators.HAP') +
+                    json_extract(state, '$.indicators.ENV') +
+                    json_extract(state, '$.indicators.SEC')
+                ) AS score
+            FROM games
+            WHERE json_extract(state, '$.status') = 'victory'
+              AND json_extract(state, '$.country') = ?
+              AND json_extract(state, '$.difficulty') = ?
+            ORDER BY score DESC, player_name COLLATE NOCASE ASC
+            LIMIT ?
+            """,
+            (country, difficulty, limit)
+        ).fetchall()
+
+    return [
+        {
+            "rank": rank,
+            "player_name": name,
+            "score": score
+        }
+        for rank, (name, score) in enumerate(rows, start=1)
+    ]
+
+

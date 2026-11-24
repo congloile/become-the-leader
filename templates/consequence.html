@@ -6,6 +6,13 @@
 
     <title>Consequence - Become the Leader</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
@@ -25,7 +32,7 @@
   <body>
     <main class="consequence-container">
       <header class="consequence-header">
-        <h1>BECOME THE LEADER</h1>
+        <h1>POLICY CONSEQUENCES</h1>
 
         <p id="round-display">Loading...</p>
       </header>
@@ -34,16 +41,10 @@
         <p class="section-label">YOUR DECISION</p>
 
         <h2 id="decision-title">Loading policy...</h2>
-
-        <p id="decision-explanation">
-          Here is how your decision affected the national indicators.
-        </p>
       </section>
 
       <section class="consequence-panel">
-        <h2>What Changed?</h2>
-
-        <p id="difficulty-note"></p>
+        <h2>Indicator Changes</h2>
 
         <div class="table-wrapper">
           <table class="impact-table">
@@ -51,7 +52,7 @@
               <tr>
                 <th>Indicator</th>
                 <th>Before</th>
-                <th>Base</th>
+                <th>Base Effect</th>
                 <th>Actual Change</th>
                 <th>After</th>
               </tr>
@@ -61,10 +62,14 @@
           </table>
         </div>
 
-        <p class="rounding-note">
-          Negative effects are adjusted by difficulty and rounded to whole
-          numbers. Indicators remain between 0 and 100.
-        </p>
+        <p id="difficulty-note"></p>
+      </section>
+
+      <!-- Policy outcome explanation -->
+      <section id="policy-outcome" class="consequence-panel" hidden>
+        <h2>Policy Outcome</h2>
+        <p id="outcome-summary"></p>
+        <div id="outcome-details"></div>
       </section>
 
       <section id="warning-panel" class="warning-panel" hidden>

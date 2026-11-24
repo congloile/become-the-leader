@@ -21,6 +21,42 @@ function formatChange(value) {
     return value > 0 ? `+${value}` : String(value);
 }
 
+function showPolicyOutcome(outcome) {
+    const panel = document.getElementById("policy-outcome");
+
+    if (!panel || !outcome || !outcome.summary) {
+        return;
+    }
+
+    document.getElementById("outcome-summary").textContent =
+        outcome.summary;
+
+    const details = document.getElementById("outcome-details");
+    details.replaceChildren();
+
+    const list = document.createElement("ul");
+
+    for (const [code, name] of Object.entries(indicatorNames)) {
+        const explanation = outcome.impacts?.[code];
+
+        if (!explanation) {
+            continue;
+        }
+
+        const item = document.createElement("li");
+        const label = document.createElement("strong");
+
+        label.textContent = `${name}: `;
+        item.appendChild(label);
+        item.appendChild(document.createTextNode(explanation));
+
+        list.appendChild(item);
+    }
+
+    details.appendChild(list);
+    panel.hidden = false;
+}
+
 function showConsequence(result) {
     const game = result.game;
     const rules = difficultyRules[game.difficulty];
@@ -35,8 +71,7 @@ function showConsequence(result) {
         `Finland | ${game.difficulty.toUpperCase()}`;
 
     document.getElementById("decision-title").textContent =
-        `You chose: ${result.decision.choice_id}. ` +
-        result.decision.text;
+        `${result.decision.choice_id}. ${result.decision.text}`;
 
     document.getElementById("difficulty-note").textContent =
         `${game.difficulty.toUpperCase()}: ` +
@@ -77,17 +112,18 @@ function showConsequence(result) {
         tableBody.appendChild(row);
     }
 
+    showPolicyOutcome(result.decision.outcome);
     showWarnings(after, rules);
 
     const message = document.getElementById("game-message");
 
     if (game.status === "playing") {
-        message.textContent =
-            `Round ${result.decision.round} completed. ` +
-            `Your government moves to Round ${game.round}.`;
+    message.textContent = "";
 
-        nextButton.textContent = `Next Round ${game.round}`;
-        nextButton.disabled = false;
+    nextButton.textContent =
+        `Continue to Round ${game.round}`;
+    nextButton.disabled = false;
+
 
         nextButton.addEventListener("click", () => {
             sessionStorage.removeItem("last_decision");
@@ -95,11 +131,7 @@ function showConsequence(result) {
         });
     } else {
         if (game.status === "victory") {
-            const score = Object.values(after)
-                .reduce((sum, value) => sum + value, 0);
-
-            message.textContent =
-                `VICTORY! Final score: ${score}`;
+            message.textContent = "";
         } else {
             message.textContent =
                 `GAME OVER — ${game.status === "defeat"
