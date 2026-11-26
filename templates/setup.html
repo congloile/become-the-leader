@@ -53,18 +53,18 @@
           <h2>Choose your country</h2>
 
           <div class="country-grid">
-            <div class="country-card selected">
+            <div class="country-card selected" data-country="finland">
               <span class="flag">🇫🇮</span>
               <h3>Finland</h3>
               <p>The Welfare State</p>
               <span class="country-status"> Available </span>
             </div>
 
-            <div class="country-card unavailable">
+            <div class="country-card" data-country="newzealand">
               <span class="flag">🇳🇿</span>
               <h3>New Zealand</h3>
-              <p>The Green Nation</p>
-              <span class="country-status"> Coming soon </span>
+              <p>The Nature Nation</p>
+              <span class="country-status">Available</span>
             </div>
 
             <div class="country-card unavailable">
@@ -96,39 +96,54 @@
               <input type="radio" name="difficulty" value="easy" />
               <strong>Easy</strong>
               <span class="difficulty-multiplier">Negative effects ×0.60</span>
-              <span class="visually-hidden">Game Over: Economy, Happiness or Environment at 10 or below; Security at 20 or below.</span>
+              <span class="visually-hidden"
+                >Game Over: Economy, Happiness or Environment at 10 or below;
+                Security at 20 or below.</span
+              >
             </label>
 
             <label class="difficulty-card">
               <input type="radio" name="difficulty" value="medium" />
               <strong>Medium</strong>
               <span class="difficulty-multiplier">Negative effects ×0.80</span>
-              <span class="visually-hidden">Game Over: Economy, Happiness or Environment at 20 or below; Security at 40 or below.</span>
+              <span class="visually-hidden"
+                >Game Over: Economy, Happiness or Environment at 20 or below;
+                Security at 40 or below.</span
+              >
             </label>
 
             <label class="difficulty-card">
               <input type="radio" name="difficulty" value="hard" />
               <strong>Hard</strong>
               <span class="difficulty-multiplier">Negative effects ×1.10</span>
-              <span class="visually-hidden">Game Over: Economy, Happiness or Environment at 30 or below; Security at 50 or below.</span>
+              <span class="visually-hidden"
+                >Game Over: Economy, Happiness or Environment at 30 or below;
+                Security at 50 or below.</span
+              >
             </label>
           </div>
 
           <div class="difficulty-rules-box" aria-label="Difficulty rules">
-            <p class="difficulty-hint">Select a difficulty to see its Game Over limits.</p>
+            <p class="difficulty-hint">
+              Select a difficulty to see its Game Over limits.
+            </p>
             <p class="difficulty-detail" data-difficulty="easy">
-              <strong>Easy:</strong> Game Over at ECO / HAP / ENV ≤ 10 or SEC ≤ 20.
+              <strong>Easy:</strong> Game Over at ECO / HAP / ENV ≤ 10 or SEC ≤
+              20.
             </p>
             <p class="difficulty-detail" data-difficulty="medium">
-              <strong>Medium:</strong> Game Over at ECO / HAP / ENV ≤ 20 or SEC ≤ 40.
+              <strong>Medium:</strong> Game Over at ECO / HAP / ENV ≤ 20 or SEC
+              ≤ 40.
             </p>
             <p class="difficulty-detail" data-difficulty="hard">
-              <strong>Hard:</strong> Game Over at ECO / HAP / ENV ≤ 30 or SEC ≤ 50.
+              <strong>Hard:</strong> Game Over at ECO / HAP / ENV ≤ 30 or SEC ≤
+              50.
             </p>
           </div>
 
           <p class="difficulty-note">
-            Multipliers apply to negative effects only. Positive effects remain unchanged.
+            Multipliers apply to negative effects only. Positive effects remain
+            unchanged.
           </p>
         </section>
 

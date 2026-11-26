@@ -1,0 +1,672 @@
+[
+  {
+    "id": 1,
+    "title": "Housing Affordability",
+    "description": "Housing costs and limited supply put pressure on households in New Zealand's growing cities. Your government must decide whether to prioritise faster construction or support existing households and improve the quality of older homes.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Accelerate Housing Construction",
+        "analysis": {
+          "summary": "Fast-track new housing through streamlined planning and infrastructure approvals.",
+          "benefits": [
+            "Increases the supply of homes and supports construction jobs.",
+            "May moderate housing costs and improve access over time."
+          ],
+          "risks": [
+            "Fast development can put pressure on land, materials and local ecosystems.",
+            "Infrastructure and quality safeguards must keep pace with construction."
+          ]
+        },
+        "outcome": {
+          "summary": "A faster housing programme eases supply constraints and supports construction activity. New development brings social and economic gains, with some environmental pressure from building and land use.",
+          "impacts": {
+            "ECO": "Construction activity and related jobs support the economy.",
+            "HAP": "Better housing availability offers relief to households priced out of the market.",
+            "ENV": "More construction and land conversion increase the environmental footprint.",
+            "SEC": "The policy does not materially change national security in this simulation."
+          }
+        },
+        "effects": {
+          "ECO": 5,
+          "HAP": 7,
+          "ENV": -4,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Housing Support & Energy-Efficient Renovations",
+        "analysis": {
+          "summary": "Provide targeted housing assistance and improve the energy efficiency of existing homes.",
+          "benefits": [
+            "Offers relatively direct relief to vulnerable households.",
+            "Reduces household energy demand and improves the quality of existing housing."
+          ],
+          "risks": [
+            "Subsidies and renovation grants require public funding.",
+            "Renovations alone do not resolve the shortage of newly available homes."
+          ]
+        },
+        "outcome": {
+          "summary": "Targeted support and warmer, more efficient homes improve living conditions and reduce energy waste. The government accepts upfront fiscal costs without rapidly expanding housing supply.",
+          "impacts": {
+            "ECO": "Subsidies and renovation programmes require substantial initial funding.",
+            "HAP": "More affordable, comfortable housing improves household wellbeing.",
+            "ENV": "Retrofitting reduces wasted energy and the impact of existing housing.",
+            "SEC": "No direct national security change is modelled for this housing package."
+          }
+        },
+        "effects": {
+          "ECO": -4,
+          "HAP": 8,
+          "ENV": 4,
+          "SEC": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Skilled Migration",
+    "description": "Businesses need skilled workers, but expanding the workforce also requires adequate housing, transport and public services. How should New Zealand respond to skill shortages?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Fast-Track Skilled Migration",
+        "analysis": {
+          "summary": "Speed up skilled visa pathways to address immediate gaps in the workforce.",
+          "benefits": [
+            "Helps employers recruit specialists and fill vacancies sooner.",
+            "Supports business activity and tax revenue in the short term."
+          ],
+          "risks": [
+            "Rapid population growth can outpace housing and public-service capacity.",
+            "Skills matching and workplace protections require careful administration."
+          ]
+        },
+        "outcome": {
+          "summary": "Employers gain faster access to skilled labour and economic activity increases. Because this simulated policy does not expand housing and services at the same pace, residents experience a modest short-term squeeze.",
+          "impacts": {
+            "ECO": "Filling shortages helps firms produce and invest.",
+            "HAP": "Housing and service capacity lag behind the faster workforce expansion, causing temporary pressure.",
+            "ENV": "No measurable direct environmental effect is assigned to this labour-market decision.",
+            "SEC": "The programme does not directly alter defence or strategic resilience."
+          }
+        },
+        "effects": {
+          "ECO": 7,
+          "HAP": -2,
+          "ENV": 0,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Invest in Domestic Skills & Retention",
+        "analysis": {
+          "summary": "Fund apprenticeships, retraining and retention programmes for locally based workers.",
+          "benefits": [
+            "Builds domestic skills and more stable career pathways.",
+            "Can improve access to training outside major cities."
+          ],
+          "risks": [
+            "Training places and incentives cost public money.",
+            "The new workforce takes time to develop, leaving short-term vacancies unfilled."
+          ]
+        },
+        "outcome": {
+          "summary": "Training and retention measures support local career opportunities and workforce stability. Their benefits take time to emerge and require public resources upfront.",
+          "impacts": {
+            "ECO": "Education and retention programmes increase near-term spending.",
+            "HAP": "Broader access to training and stronger career security support wellbeing.",
+            "ENV": "The simulation gives no immediate environmental change to this policy.",
+            "SEC": "The policy does not produce an immediate security effect in the game model."
+          }
+        },
+        "effects": {
+          "ECO": -4,
+          "HAP": 6,
+          "ENV": 0,
+          "SEC": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Agricultural Emissions",
+    "description": "Agriculture is vital to New Zealand's exports, but livestock methane and other farm emissions complicate climate targets. Should the government accelerate a broad emissions-reduction programme or support intensive production?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Agricultural Emission Reduction Programme",
+        "analysis": {
+          "summary": "Fund farm technology, methane mitigation, improved land management and a phased emissions-reduction programme.",
+          "benefits": [
+            "Makes a significant contribution to reducing agricultural emissions.",
+            "Supports cleaner production methods and long-term environmental recovery."
+          ],
+          "risks": [
+            "Farmers face transition costs and compliance work.",
+            "Some rural communities may feel short-term income pressure."
+          ]
+        },
+        "outcome": {
+          "summary": "A comprehensive national transition programme reduces farm emissions and improves environmental performance. Subsidies, new equipment and adjustment costs weigh on the economy, while some rural households experience disruption.",
+          "impacts": {
+            "ECO": "Transition grants and changes to production create near-term economic costs.",
+            "HAP": "Adjustment pressures in farming communities reduce short-term satisfaction.",
+            "ENV": "A broad package tackling methane, nutrient losses and land management delivers a large environmental improvement in this model.",
+            "SEC": "The programme has no direct national security effect in the simulation."
+          }
+        },
+        "effects": {
+          "ECO": -4,
+          "HAP": -3,
+          "ENV": 15,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Expand Intensive Agricultural Production",
+        "analysis": {
+          "summary": "Support higher livestock output and expanded agricultural exports without introducing new environmental safeguards.",
+          "benefits": [
+            "Increases export volumes and agricultural income in the near term.",
+            "Creates additional activity in rural supply chains."
+          ],
+          "risks": [
+            "Higher livestock emissions undermine climate progress.",
+            "Greater land and nutrient pressures can damage water quality and habitats."
+          ]
+        },
+        "outcome": {
+          "summary": "Higher agricultural production brings export income and modest local economic benefits. In this scenario, weaker environmental safeguards allow emissions and pollution pressures to grow sharply.",
+          "impacts": {
+            "ECO": "Expanded output and exports increase revenue in the short term.",
+            "HAP": "Additional rural income provides a modest wellbeing benefit.",
+            "ENV": "More intensive production increases emissions and pressure on land and waterways.",
+            "SEC": "No direct national security change is assigned to higher farm output alone."
+          }
+        },
+        "effects": {
+          "ECO": 9,
+          "HAP": 2,
+          "ENV": -11,
+          "SEC": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Tourism vs Conservation",
+    "description": "Visitors create jobs and revenue across New Zealand, but busy destinations can strain fragile habitats and local infrastructure. Decide how to manage tourism in environmentally sensitive regions.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Expand Tourism in Sensitive Regions",
+        "analysis": {
+          "summary": "Approve more visitor facilities and expand access to popular natural destinations.",
+          "benefits": [
+            "Supports tourism businesses and local employment.",
+            "Brings new amenities and revenue to regional communities."
+          ],
+          "risks": [
+            "More traffic and development increase pressure on habitats.",
+            "Popular sites may suffer overcrowding and waste-management problems."
+          ]
+        },
+        "outcome": {
+          "summary": "Tourism expansion increases local revenue and improves access to visitor services. However, intensive use of sensitive destinations harms ecosystems and increases environmental pressure.",
+          "impacts": {
+            "ECO": "Tourism spending and new development support jobs and output.",
+            "HAP": "Additional local opportunities create a modest wellbeing benefit.",
+            "ENV": "Visitor pressure, construction and waste reduce ecosystem quality.",
+            "SEC": "Tourism expansion does not directly affect national security in this scenario."
+          }
+        },
+        "effects": {
+          "ECO": 7,
+          "HAP": 2,
+          "ENV": -8,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Limit Visitor Pressure & Restore Ecosystems",
+        "analysis": {
+          "summary": "Set visitor caps in vulnerable sites, invest in conservation and guide tourism towards lower-impact options.",
+          "benefits": [
+            "Protects biodiversity and improves damaged visitor areas.",
+            "Can make local destinations more sustainable for residents and visitors."
+          ],
+          "risks": [
+            "Visitor caps reduce some immediate tourism revenue.",
+            "Conservation programmes require monitoring and public funding."
+          ]
+        },
+        "outcome": {
+          "summary": "The government protects vulnerable habitats and restores visitor areas. Communities gain healthier natural spaces while some businesses lose short-term volume and public conservation spending rises.",
+          "impacts": {
+            "ECO": "Visitor restrictions and restoration expenses reduce short-term economic activity.",
+            "HAP": "Healthier natural spaces and reduced overcrowding support local wellbeing.",
+            "ENV": "Habitat restoration and lower visitor pressure significantly improve environmental performance.",
+            "SEC": "No direct security effect is assigned to conservation measures in this game model."
+          }
+        },
+        "effects": {
+          "ECO": -2,
+          "HAP": 3,
+          "ENV": 12,
+          "SEC": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Rural Healthcare",
+    "description": "Remote communities struggle to recruit clinicians and maintain access to in-person care. Your government must choose between expanding local services and a lower-cost digital-first restructuring.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Expand Rural Clinics & Medical Staffing",
+        "analysis": {
+          "summary": "Fund additional rural clinics, staff recruitment and incentives for regional medical workers.",
+          "benefits": [
+            "Improves access to face-to-face treatment and preventive care.",
+            "Reduces travel burdens for patients in remote areas."
+          ],
+          "risks": [
+            "Operating clinics and retaining staff are expensive.",
+            "Finding enough qualified professionals may remain difficult."
+          ]
+        },
+        "outcome": {
+          "summary": "Expanded rural clinics and staffing make healthcare easier to access for remote households. The social gains are substantial, while ongoing staffing and operating costs require public investment.",
+          "impacts": {
+            "ECO": "Recruitment and operating budgets raise public healthcare spending.",
+            "HAP": "Improved access, shorter trips and continuity of care strongly improve wellbeing.",
+            "ENV": "The simulation does not assume a material environmental change from this service policy.",
+            "SEC": "The policy has no direct strategic security impact in this scenario."
+          }
+        },
+        "effects": {
+          "ECO": -5,
+          "HAP": 10,
+          "ENV": 0,
+          "SEC": 0
+        }
+      },
+      {
+        "id": "B",
+        "text": "Expand Telehealth & Consolidate Facilities",
+        "analysis": {
+          "summary": "Expand remote appointments while closing or consolidating some small in-person facilities.",
+          "benefits": [
+            "Reduces some operating costs and improves access to routine online consultations.",
+            "Allows scarce specialists to serve patients across multiple regions."
+          ],
+          "risks": [
+            "Patients needing physical examinations may face longer journeys.",
+            "Poor connectivity and digital exclusion can disadvantage some communities."
+          ]
+        },
+        "outcome": {
+          "summary": "Telehealth services improve efficiency and save operating costs, but facility closures leave some rural patients with fewer practical options for in-person treatment.",
+          "impacts": {
+            "ECO": "Consolidating facilities reduces some short-term operating costs.",
+            "HAP": "Longer trips and gaps in face-to-face services lower satisfaction for affected patients.",
+            "ENV": "No significant direct environmental effect is modelled here.",
+            "SEC": "A change in healthcare delivery alone does not alter national security in this simulation."
+          }
+        },
+        "effects": {
+          "ECO": 3,
+          "HAP": -3,
+          "ENV": 0,
+          "SEC": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Energy & Grid Security",
+    "description": "A highly renewable electricity system still needs reliable transmission, storage and backup during droughts, storms and demand peaks. The government must choose between resilient infrastructure investment and near-term savings.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Upgrade Renewable Energy & Grid Resilience",
+        "analysis": {
+          "summary": "Invest in transmission upgrades, storage, grid protection and reliable low-emission generation.",
+          "benefits": [
+            "Reduces outage risks and supports cleaner electricity over time.",
+            "Strengthens critical infrastructure resilience against supply disruptions."
+          ],
+          "risks": [
+            "Grid upgrades and new generation need high initial investment.",
+            "Major infrastructure projects take years to complete."
+          ]
+        },
+        "outcome": {
+          "summary": "A coordinated programme strengthens the grid and supports low-emission power. Households gain confidence in energy reliability, although infrastructure investment requires considerable resources.",
+          "impacts": {
+            "ECO": "Funding major grid and renewable projects reduces resources available for other near-term priorities.",
+            "HAP": "More reliable electricity gives households and businesses modest reassurance.",
+            "ENV": "Low-emission generation and better system efficiency support environmental progress.",
+            "SEC": "Improved resilience of essential power infrastructure reduces national disruption risks."
+          }
+        },
+        "effects": {
+          "ECO": -6,
+          "HAP": 3,
+          "ENV": 12,
+          "SEC": 7
+        }
+      },
+      {
+        "id": "B",
+        "text": "Defer Grid Upgrades & Expand Fossil-Fuel Backup",
+        "analysis": {
+          "summary": "Delay costly grid reinforcement and rely more heavily on existing or expanded fossil-fuel backup capacity.",
+          "benefits": [
+            "Avoids substantial near-term infrastructure expenditure.",
+            "Backup generation can relieve some immediate supply concerns."
+          ],
+          "risks": [
+            "Ageing grid bottlenecks and weak redundancy increase exposure to major disruptions.",
+            "Additional fossil-fuel use slows emissions reductions."
+          ]
+        },
+        "outcome": {
+          "summary": "The government saves on grid modernisation and secures limited short-term backup generation. Over time, deferred infrastructure upgrades leave critical electricity networks vulnerable and weaken decarbonisation progress.",
+          "impacts": {
+            "ECO": "Deferring major capital expenditure improves the short-term fiscal position.",
+            "HAP": "Some backup availability gives consumers limited immediate reassurance.",
+            "ENV": "Greater reliance on fossil fuels increases emissions relative to the cleaner pathway.",
+            "SEC": "Underinvestment in critical grid infrastructure raises exposure to prolonged interruptions despite having backup power."
+          }
+        },
+        "effects": {
+          "ECO": 6,
+          "HAP": 2,
+          "ENV": -5,
+          "SEC": -8
+        }
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Natural Disaster Preparedness",
+    "description": "Earthquakes, flooding and severe storms can disrupt communities and vital services. The government must decide how much to invest now in preparedness and critical infrastructure resilience.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Strengthen Infrastructure & Natural Flood Defences",
+        "analysis": {
+          "summary": "Retrofit essential facilities, improve evacuation readiness and restore natural flood buffers.",
+          "benefits": [
+            "Limits disruption to essential services during disasters.",
+            "Protects vulnerable communities and supports ecosystem-based flood management."
+          ],
+          "risks": [
+            "Retrofits and risk-reduction projects require significant funding.",
+            "Some benefits only become visible when a severe event occurs."
+          ]
+        },
+        "outcome": {
+          "summary": "The government strengthens vital facilities and community preparedness, improving resilience to major disasters. The investment comes at a fiscal cost but also supports wellbeing and natural flood protection.",
+          "impacts": {
+            "ECO": "Public spending on retrofits and readiness creates short-term budget pressure.",
+            "HAP": "Safer services and stronger community preparedness improve peace of mind.",
+            "ENV": "Restoring natural flood buffers brings a modest environmental benefit.",
+            "SEC": "Stronger continuity plans and critical infrastructure improve national resilience during emergencies."
+          }
+        },
+        "effects": {
+          "ECO": -6,
+          "HAP": 6,
+          "ENV": 3,
+          "SEC": 5
+        }
+      },
+      {
+        "id": "B",
+        "text": "Defer Preparedness Investment",
+        "analysis": {
+          "summary": "Postpone major resilience projects and direct the saved funds to immediate household relief.",
+          "benefits": [
+            "Frees money for near-term fiscal priorities.",
+            "Offers a small immediate benefit through household assistance."
+          ],
+          "risks": [
+            "Essential infrastructure remains exposed to natural hazards.",
+            "Longer disruptions and higher recovery costs become more likely in a severe event."
+          ]
+        },
+        "outcome": {
+          "summary": "Delaying preparedness releases funds for immediate needs but leaves important infrastructure exposed. The choice creates little environmental change and reduces the country's capacity to withstand future shocks.",
+          "impacts": {
+            "ECO": "Deferred projects provide a short-term fiscal saving.",
+            "HAP": "A portion of the savings funds limited immediate household assistance.",
+            "ENV": "The simulation assigns no immediate environmental improvement or deterioration.",
+            "SEC": "Postponed resilience measures increase risks to essential service continuity during major disasters."
+          }
+        },
+        "effects": {
+          "ECO": 5,
+          "HAP": 1,
+          "ENV": 0,
+          "SEC": -7
+        }
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Agricultural Export Dependence",
+    "description": "Agricultural exports support New Zealand's economy, but concentration in a narrow range of markets can expose producers to external pressure. The government must choose between diversification or a lucrative but restrictive export arrangement.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Diversify Markets & Invest in Sustainable Processing",
+        "analysis": {
+          "summary": "Support exporters entering new markets and fund more sustainable processing capabilities.",
+          "benefits": [
+            "Reduces exposure to disruption or pressure from any single buyer.",
+            "Improves the environmental footprint of export processing."
+          ],
+          "risks": [
+            "New market entry and equipment require upfront investment.",
+            "Exporters may initially face slower sales growth while relationships develop."
+          ]
+        },
+        "outcome": {
+          "summary": "More diverse export routes and cleaner processing strengthen long-term resilience. The transition has an initial cost, but it supports workers and reduces environmental pressures.",
+          "impacts": {
+            "ECO": "Market development and processing upgrades impose near-term costs.",
+            "HAP": "More stable future market access gives producers a modest confidence benefit.",
+            "ENV": "Cleaner processing and reduced waste improve environmental performance.",
+            "SEC": "A wider buyer base reduces strategic exposure to a single external market."
+          }
+        },
+        "effects": {
+          "ECO": -3,
+          "HAP": 2,
+          "ENV": 6,
+          "SEC": 5
+        }
+      },
+      {
+        "id": "B",
+        "text": "Expand Intensive Exports Under Exclusive Market Commitments",
+        "analysis": {
+          "summary": "Accept preferential export contracts that require heavy production growth and restrict access to alternative buyers.",
+          "benefits": [
+            "Delivers rapid export revenue and near-term economic growth.",
+            "Raises demand for agricultural suppliers and related services."
+          ],
+          "risks": [
+            "Increased intensity creates additional emissions and land-use pressure.",
+            "Restrictive long-term commitments leave exporters vulnerable to pressure from a dominant buyer."
+          ]
+        },
+        "outcome": {
+          "summary": "Large exclusive contracts expand agricultural exports and raise incomes now. In this hypothetical deal, intensive production worsens environmental outcomes, while restrictive terms increase exposure to external leverage.",
+          "impacts": {
+            "ECO": "Higher contracted production increases export receipts and commercial activity.",
+            "HAP": "Rising rural incomes deliver a modest short-term wellbeing gain.",
+            "ENV": "Additional intensive production worsens emissions and land and water pressure.",
+            "SEC": "Dependence on one dominant buyer under restrictive contracts increases exposure to economic coercion."
+          }
+        },
+        "effects": {
+          "ECO": 11,
+          "HAP": 3,
+          "ENV": -9,
+          "SEC": -6
+        }
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Defence Modernisation",
+    "description": "New Zealand must maintain maritime awareness and defence readiness across a large ocean region while public spending is constrained. How should the government fund its longer-term capabilities?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Modernise Maritime Surveillance & Defence",
+        "analysis": {
+          "summary": "Invest in maritime patrol capability, surveillance systems, training and long-term defence readiness.",
+          "benefits": [
+            "Improves the ability to monitor and respond to maritime security challenges.",
+            "Supports sovereign decision-making and cooperation with regional partners."
+          ],
+          "risks": [
+            "Major capability programmes require substantial funding.",
+            "Public services may face tighter budgets if spending is not offset elsewhere."
+          ]
+        },
+        "outcome": {
+          "summary": "Major defence investment strengthens maritime monitoring and operational readiness. The gains come with significant public expenditure and a modest sense of budget pressure among households.",
+          "impacts": {
+            "ECO": "Aircraft, surveillance systems and training impose a substantial fiscal cost.",
+            "HAP": "Competing spending priorities create slight short-term public dissatisfaction.",
+            "ENV": "The simulation does not attach a direct environmental effect to this capability package.",
+            "SEC": "Improved maritime surveillance and readiness materially strengthen the country's security posture."
+          }
+        },
+        "effects": {
+          "ECO": -7,
+          "HAP": -2,
+          "ENV": 0,
+          "SEC": 13
+        }
+      },
+      {
+        "id": "B",
+        "text": "Freeze Major Maritime Capability Renewals",
+        "analysis": {
+          "summary": "Suspend major replacement programmes for maritime surveillance and reallocate part of the budget to public services.",
+          "benefits": [
+            "Reduces near-term defence capital spending.",
+            "Creates room for short-term spending on public services."
+          ],
+          "risks": [
+            "Equipment ageing and capability gaps undermine maritime awareness.",
+            "Reduced operational readiness makes a prolonged response to security challenges harder."
+          ]
+        },
+        "outcome": {
+          "summary": "Freezing multiple capability renewals frees budget for domestic priorities but gradually creates a serious maritime surveillance and readiness gap. The security cost is unusually large because the freeze is broad and long-term.",
+          "impacts": {
+            "ECO": "Deferring several major acquisitions creates short-term savings.",
+            "HAP": "Some savings are redirected to services valued by households.",
+            "ENV": "No direct environmental effect is modelled for the procurement freeze.",
+            "SEC": "A broad, prolonged gap in surveillance and response capacity weakens national security considerably."
+          }
+        },
+        "effects": {
+          "ECO": 6,
+          "HAP": 4,
+          "ENV": 0,
+          "SEC": -12
+        }
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Pacific Geopolitical Competition",
+    "description": "Regional competition creates opportunities for investment and cooperation, but some agreements could limit strategic autonomy. Decide how New Zealand should pursue growth while safeguarding critical infrastructure and its regional relationships.",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Strengthen Regional Cooperation & Strategic Autonomy",
+        "analysis": {
+          "summary": "Invest in transparent regional partnerships and retain independent control over critical assets.",
+          "benefits": [
+            "Builds resilient regional cooperation and strategic flexibility.",
+            "Protects oversight of key infrastructure and supports responsible development."
+          ],
+          "risks": [
+            "Partnership programmes and domestic oversight require public resources.",
+            "Rejecting some exclusive investment terms may reduce immediate capital inflows."
+          ]
+        },
+        "outcome": {
+          "summary": "New Zealand preserves control over critical assets and broadens cooperation across the Pacific. The approach supports security and modest social and environmental gains, though investment costs arise now.",
+          "impacts": {
+            "ECO": "Regional programmes and additional safeguards create an immediate funding cost.",
+            "HAP": "More dependable partnerships modestly improve public confidence.",
+            "ENV": "Transparent planning and environmental safeguards support a modest benefit.",
+            "SEC": "Maintaining strategic control and diversified regional ties increases autonomy and security."
+          }
+        },
+        "effects": {
+          "ECO": -3,
+          "HAP": 3,
+          "ENV": 2,
+          "SEC": 11
+        }
+      },
+      {
+        "id": "B",
+        "text": "Grant Exclusive Control of Critical Infrastructure for Investment",
+        "analysis": {
+          "summary": "Accept a large foreign investment package in exchange for long-term exclusive control of strategic port or communications infrastructure.",
+          "benefits": [
+            "Brings a large injection of capital and near-term business activity.",
+            "Can deliver visible new facilities and employment."
+          ],
+          "risks": [
+            "Exclusive outside control of critical infrastructure creates major strategic dependency.",
+            "Fast-track development may weaken environmental and public-interest safeguards."
+          ]
+        },
+        "outcome": {
+          "summary": "Large investment raises short-term growth in this hypothetical agreement. But granting long-term exclusive control of strategic infrastructure sharply reduces the state's freedom to respond to security crises and imposes modest environmental costs.",
+          "impacts": {
+            "ECO": "New capital and construction contracts provide a substantial economic boost.",
+            "HAP": "Jobs and near-term service improvements produce a small social benefit.",
+            "ENV": "Accelerated infrastructure construction adds limited environmental pressure.",
+            "SEC": "Long-term exclusive control of strategic assets creates severe dependence and reduces crisis-time autonomy."
+          }
+        },
+        "effects": {
+          "ECO": 12,
+          "HAP": 2,
+          "ENV": -3,
+          "SEC": -14
+        }
+      }
+    ]
+  }
+]

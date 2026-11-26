@@ -11,8 +11,10 @@ from game_storage import (
 
 app = Flask(__name__)
 
-scenarios = load_scenarios()
 init_db()
+
+def get_country_scenarios(country):
+    return load_scenarios(country)
 
 def public_scenario(scenario):
     return {
@@ -55,8 +57,8 @@ def start_game():
     if not 1 <= len(name) <= 30:
         return jsonify({"error": "Name must be 1-30 characters"}), 400
 
-    # Finland is the only playable country
-    if country != "finland":
+    # Available countries
+    if country not in ("finland", "newzealand"):
         return jsonify({"error": "Country not available"}), 400
 
     # Validate difficulty
@@ -64,11 +66,10 @@ def start_game():
         return jsonify({"error": "Invalid difficulty"}), 400
 
     # Create game using selected difficulty
-    game = new_game(difficulty)
+    game = new_game(difficulty, country)
 
     # Save player information
     game["player_name"] = name
-    game["country"] = country
 
     # Save game in SQLite
     game_id = save_game(game)
@@ -76,7 +77,7 @@ def start_game():
     return jsonify({
         "game_id": game_id,
         "game": game,
-        "scenario": public_scenario(scenarios[0])
+        "scenario": public_scenario(get_country_scenarios(country)[0])
     }), 200
 
 
@@ -117,9 +118,12 @@ def choose_policy():
     if requested_round != game["round"]:
         return jsonify({"error": "Wrong round"}), 409
 
+    current_scenarios = get_country_scenarios(
+    game.get("country", "finland"))
+
     # Find current scenario and selected choice
     scenario = next(
-        (s for s in scenarios if s["id"] == requested_round),
+        (s for s in current_scenarios if s["id"] == requested_round),
         None
     )
 
@@ -142,7 +146,7 @@ def choose_policy():
     old_game = deepcopy(game)
 
     # Calculate the selected policy
-    play_choice(game, choice_id, scenarios)
+    play_choice(game, choice_id, current_scenarios)
 
     # Save only if the database state is unchanged
     try:
@@ -191,8 +195,12 @@ def get_game_state(game_id):
     current_scenario = None
 
     if game["status"] == "playing":
+        current_scenarios = get_country_scenarios(
+            game.get("country", "finland")
+        )
+
         scenario = next(
-            (s for s in scenarios if s["id"] == game["round"]),
+            (s for s in current_scenarios if s["id"] == game["round"]),
             None
         )
 

@@ -13,11 +13,21 @@ INITIAL_STATS = {
     "SEC": 60
 }
 
-def new_game(difficulty="medium"):
+def new_game(difficulty="medium", country="finland"):
+
+    if country not in COUNTRY_CONFIGS:
+        raise ValueError(f"Unsupported country: {country}")
+
+    if difficulty not in DIFFICULTY_RULES:
+        raise ValueError(f"Invalid difficulty: {difficulty}")
+
+    config = COUNTRY_CONFIGS[country]
+
     game = {
         "round": 1,
+        "country": country,
         "difficulty": difficulty,
-        "indicators": INITIAL_STATS.copy(),
+        "indicators": config["initial_stats"].copy(),
         "status": "playing"
     }
 
@@ -62,20 +72,56 @@ DIFFICULTY_RULES = {
     }
 }
 
+
+# Country-specific game configuration
+COUNTRY_CONFIGS = {
+    "finland": {
+        "initial_stats": INITIAL_STATS.copy(),
+        "win_requirements": WIN_REQUIREMENTS.copy(),
+        "security_limits": {
+            "easy": 20,
+            "medium": 40,
+            "hard": 50
+        }
+    },
+
+    "newzealand": {
+        "initial_stats": {
+            "ECO": 62,
+            "HAP": 65,
+            "ENV": 60,
+            "SEC": 75
+        },
+        "win_requirements": {
+            "ECO": 70,
+            "HAP": 78,
+            "ENV": 78
+        },
+        "security_limits": {
+            "easy": 20,
+            "medium": 40,
+            "hard": 50
+        }
+    }
+}
+
+
 def finish_round(game):
     if game["status"] != "playing":
         return game
 
     indicators = game["indicators"]
     difficulty = game["difficulty"]
+    country = game.get("country", "finland")
 
+    config = COUNTRY_CONFIGS[country]
     rules = DIFFICULTY_RULES[difficulty]
 
     # Check Game Over thresholds
     for name, value in indicators.items():
 
         if name == "SEC":
-            limit = rules["sec_threshold"]
+            limit = config["security_limits"][difficulty]
         else:
             limit = rules["threshold"]
 
@@ -83,12 +129,12 @@ def finish_round(game):
             game["status"] = "game_over"
             return game
 
-    # Check victory conditions after round 10
+    # Check victory conditions after Round 10
     if game["round"] == MAX_ROUNDS:
 
         if all(
             indicators[name] >= target
-            for name, target in WIN_REQUIREMENTS.items()
+            for name, target in config["win_requirements"].items()
         ):
             game["status"] = "victory"
         else:
@@ -98,7 +144,6 @@ def finish_round(game):
         game["round"] += 1
 
     return game
-
 
 def apply_choice(game, effects):
     if game["status"] != "playing":
@@ -127,9 +172,21 @@ def apply_choice(game, effects):
 
     return game
 
+def load_scenarios(country="finland"):
+    country_files = {
+        "finland": "finland.json",
+        "newzealand": "new_zealand.json",
+        "singapore": "singapore.json"
+    }
 
-def load_scenarios():
-    file_path = Path(__file__).with_name("scenarios.json")
+    if country not in country_files:
+        raise ValueError(f"Unsupported country: {country}")
+
+    file_path = (
+        Path(__file__).resolve().parent
+        / "data"
+        / country_files[country]
+    )
 
     with open(file_path, "r", encoding="utf-8") as file:
         scenarios = json.load(file)
